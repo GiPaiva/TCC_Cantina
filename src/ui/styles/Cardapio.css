@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 96.89px);
+}
+.card{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+}
+
+.esquerda{
+    display: flex;
+    justify-content: left;
+    padding-left: 15px;
+}
+.salgado{
+    font-size: 55px;
+    color: #FFB500;
+}
+
+.header-detalhesC{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-detalhes-div1{
+    width: 10%;
+    height: 2px;
+    margin: 5px;
+    background-color: #FFB500;
+}
+.header-detalhes-div2{
+    width: 15%;
+    height: 2px;
+    margin: 5px;
+    background-color: #FFB500;
+}
+.header-detalhes-div3{
+    width: 20%;
+    height: 2px;
+    margin: 5px;
+    background-color: #FFB500;
+}
