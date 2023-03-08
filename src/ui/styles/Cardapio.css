@@ -60,3 +60,17 @@
     margin: 5px;
     background-color: #FFB500;
 }
+
+.caixa{
+    width: 25vw;
+    height: 100%;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: black;
+    background-color: #d7d7d799;
+}
