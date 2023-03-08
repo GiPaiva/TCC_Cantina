@@ -12,3 +12,8 @@ ul{
 a{
     text-decoration: none;
 }
+
+body{
+    background-image: url('../imgs/image3.png');
+    background-repeat: repeat-x(2);
+}
