@@ -21,45 +21,57 @@ function Cardapio() {
         </div>
         <div className='card'>
           <div className='esquerda'>
-            <div>
-              <p className='produto' id='salgado'>Salgados</p>
+            <div className='categoria-caixa'>
+              <div>
+                <p className='categoria-titulo' id='salgado'>Salgados</p>
+              </div>
+              <div className="body-detalhes">
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div3"></div>
+              </div>
             </div>
-            <div className="body-detalhes">
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div3"></div>
-            </div>
-            <div>
-              <ul>
-                <li></li>
-              </ul>
+            <div className='lista'>
+              <table className='lista-produto'>
+                <tr>
+                  <td className='produto'>Coxinha</td>
+                  <td className='produto-preco'>Preço</td>
+                </tr>
+              </table>
             </div>
           </div>
 
           <div className='direita'>
-            <div className="body-detalhesD">
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div1"></div>
+            <div className='categoria-caixa'>
+              <div className="body-detalhesD">
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div1"></div>
+              </div>
+              <div>
+                <p className='categoria-titulo' id='lanches'>Lanches</p>
+              </div>
             </div>
-            <div>
-              <p className='produto' id='lanches'>Lanches</p>
-            </div>
-            <div>
-              <ul>
-                <li></li>
-              </ul>
+            <div className='lista'>
+              <table className='lista-produto'>
+                <tr>
+                  <td className='produto'>Coxinha</td>
+                  <td className='produto-preco'>Preço</td>
+                </tr>
+              </table>
             </div>
           </div>
 
           <div className='esquerda'>
-            <div>
-              <p className='produto' id='pasteis'>Pasteis</p>
-            </div>
-            <div className="body-detalhes">
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div1"></div>
+            <div className='categoria-caixa'>
+              <div>
+                <p className='categoria-titulo' id='pasteis'>Pasteis</p>
+              </div>
+              <div className="body-detalhes">
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div1"></div>
+              </div>
             </div>
             <div className='lista-produto'>
               <ul>
@@ -69,14 +81,17 @@ function Cardapio() {
           </div>
 
           <div className='direita'>
-            <div className="body-detalhesD">
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div2"></div>
+            <div className='categoria-caixa'>
+              <div className="body-detalhesD">
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div2"></div>
+              </div>
+              <div>
+                <p className='categoria-titulo' id='tapioca-salgada'>Tapioca-Salgada</p>
+              </div>
             </div>
-            <div>
-              <p className='produto' id='tapioca-salgada'>Tapioca-Salgada</p>
-            </div>
+
             <div>
               <ul>
                 <li></li>
@@ -85,13 +100,53 @@ function Cardapio() {
           </div>
 
           <div className='esquerda'>
-            <div>
-              <p className='produto' id='tapioca-doce'>Tapioca-Doce</p>
+            <div className='categoria-caixa'>
+              <div>
+                <p className='categoria-titulo' id='tapioca-doce'>Tapioca-Doce</p>
+              </div>
+              <div className="body-detalhes">
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div2"></div>
+              </div>
             </div>
-            <div className="body-detalhes">
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div2"></div>
+
+            <div>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className='direita'>
+            <div className='categoria-caixa'>
+              <div className="body-detalhesD">
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div3"></div>
+              </div>
+              <div>
+                <p className='categoria-titulo' id='sucos'>Sucos</p>
+              </div>
+            </div>
+          
+            <div>
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className='esquerda'>
+            <div className='categoria-caixa'>
+              <div>
+                <p className='categoria-titulo' id='refri'>Refri</p>
+              </div>
+              <div className="body-detalhes">
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div2"></div>
+              </div>
             </div>
             <div>
               <ul>
@@ -101,45 +156,15 @@ function Cardapio() {
           </div>
 
           <div className='direita'>
-            <div className="body-detalhesD">
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div3"></div>
-            </div>
-            <div>
-              <p className='produto' id='sucos'>Sucos</p>
-            </div>
-            <div>
-              <ul>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className='esquerda'>
-            <div>
-              <p className='produto' id='refri'>Refri</p>
-            </div>
-            <div className="body-detalhes">
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div2"></div>
-            </div>
-            <div>
-              <ul>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className='direita'>
-            <div className="body-detalhesD">
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div1"></div>
-            </div>
-            <div>
-              <p className='produto' id='pizza'>Pizza</p>
+            <div className='categoria-caixa'>
+              <div className="body-detalhesD">
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div1"></div>
+              </div>
+              <div>
+                <p className='categoria-titulo' id='pizza'>Pizza</p>
+              </div>
             </div>
             <div>
               <ul>
@@ -149,13 +174,15 @@ function Cardapio() {
           </div>
 
           <div className='esquerda'>
-            <div>
-              <p className='produto' id='sobremesas'>Sobremesa</p>
-            </div>
-            <div className="body-detalhes">
-              <div className="body-detalhes-div2"></div>
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div3"></div>
+            <div className='categoria-caixa'>
+              <div>
+                <p className='categoria-titulo' id='sobremesas'>Sobremesa</p>
+              </div>
+              <div className="body-detalhes">
+                <div className="body-detalhes-div2"></div>
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div3"></div>
+              </div>
             </div>
             <div>
               <ul>
@@ -165,13 +192,15 @@ function Cardapio() {
           </div>
 
           <div className='direita'>
-            <div className="body-detalhesD">
-              <div className="body-detalhes-div1"></div>
-              <div className="body-detalhes-div3"></div>
-              <div className="body-detalhes-div2"></div>
-            </div>
-            <div>
-              <p className='produto' id='acai'>Açaí</p>
+            <div className='categoria-caixa'>
+              <div className="body-detalhesD">
+                <div className="body-detalhes-div1"></div>
+                <div className="body-detalhes-div3"></div>
+                <div className="body-detalhes-div2"></div>
+              </div>
+              <div>
+                <p className='categoria-titulo' id='acai'>Açaí</p>
+              </div>
             </div>
             <div>
               <ul>
