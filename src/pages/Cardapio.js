@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from '../ui/components/Header';
 import '../ui/styles/Cardapio.css';
 
@@ -8,16 +9,18 @@ function Cardapio() {
         <Header></Header>
       </div>
       <div className='container'>
-        <div className='caixa links'>
-          <a class="page" href="#salgado">Salgado</a>
-					<a class="page" href="#lanches">Lanches</a>
-					<a class="page" href="#pasteis">Pasteis</a>
-					<a class="page" href="#tapioca-salgada">Tapioca-Salgada</a>
-					<a class="page" href="#tapioca-doce">Tapioca-Doce</a>
-					<a class="page" href="#sucos">Sucos</a>
-					<a class="page" href="#refris">Refris</a>
-					<a class="page" href="#sobremesa">Sobremesa</a>
-					<a class="page" href="#acai">Açaí</a>
+        <div className='caixa'>
+          <div className='links'>
+            <a class="page" href="#salgado">Salgado</a>
+            <a class="page" href="#lanches">Lanches</a>
+            <a class="page" href="#pasteis">Pasteis</a>
+            <a class="page" href="#tapioca-salgada">Tapioca-Salgada</a>
+            <a class="page" href="#tapioca-doce">Tapioca-Doce</a>
+            <a class="page" href="#sucos">Sucos</a>
+            <a class="page" href="#refris">Refris</a>
+            <a class="page" href="#sobremesa">Sobremesa</a>
+            <a class="page" href="#acai">Açaí</a>
+          </div>
         </div>
         <div className='card'>
           <div className='esquerda'>
@@ -31,7 +34,7 @@ function Cardapio() {
                 <div className="body-detalhes-div3"></div>
               </div>
             </div>
-            <div className='lista'>
+            <div>
               <table className='lista-produto'>
                 <tr>
                   <td className='produto'>Coxinha</td>
@@ -54,9 +57,10 @@ function Cardapio() {
             </div>
             <div className='lista'>
               <table className='lista-produto'>
-                <tr>
-                  <td className='produto'>Coxinha</td>
-                  <td className='produto-preco'>Preço</td>
+                <tr className='lista-produto-itens'>
+                  <td className='produto-preco-direita'>Preço</td>
+                  <td className='produto-direita
+                  '>Coxinha</td>
                 </tr>
               </table>
             </div>
