@@ -5,6 +5,11 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }   
 
+html{
+    width: 100vw;
+    height: 100vh;
+}
+
 ul{
     list-style: none;
 }
@@ -19,6 +24,20 @@ body{
         url('../imgs/fundo.png');
     background-repeat: no-repeat,no-repeat;
     background-position: left, right;
-    background-size: contain, cover; 
-        
+    background-size: contain, cover;    
+}
+
+@media (max-width:1200px) {
+    body{
+        background-image: 
+        url('../imgs/fundo.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+}
+@media(max-width:500px){
+    body{
+        background-image: none;
+        background-color: white;
+    }
 }

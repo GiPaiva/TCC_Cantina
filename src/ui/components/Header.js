@@ -1,12 +1,6 @@
 import React from "react";
 import logo from "../imgs/logo.png"
 import areafuncionario from "../imgs/areafuncionario.png"
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Link
-} from 'react-router-dom';
 
 import Login from "../../pages/Login.js"
 import "../styles/Header.css"
