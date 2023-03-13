@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Header from '../ui/components/Header';
 import '../ui/styles/Cardapio.css';
+import '../ui/styles/responsivo.css'
 
 
 function Cardapio() {
