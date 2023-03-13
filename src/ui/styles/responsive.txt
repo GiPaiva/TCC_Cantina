@@ -1,0 +1,10 @@
+div .container .caixa .links .page{
+    font-size: 16px;
+    text-align: center;
+}
+div .card .direita .categoria-caixa div .categoria-titulo{
+    font-size: 30px;
+}
+div .card .esquerda .categoria-caixa div .categoria-titulo{
+    font-size: 30px;
+}
