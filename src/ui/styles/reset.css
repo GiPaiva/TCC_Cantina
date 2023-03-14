@@ -19,12 +19,10 @@ a{
 }
 
 body{
-    background-image: 
-        url('../imgs/image3.png'),
+    background-image:
         url('../imgs/fundo.png');
-    background-repeat: no-repeat,no-repeat;
-    background-position: left, right;
-    background-size: contain, cover;    
+    background-repeat: no-repeat;
+    background-size:cover;    
 }
 
 @media (max-width:1200px) {

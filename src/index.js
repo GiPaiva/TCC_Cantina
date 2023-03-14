@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import './ui/styles/reset.css';
-import Cardapio from './pages/Cardapio';
+// import Cardapio from './pages/Cardapio';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Cardapio />
+    <App />
   </React.StrictMode>
 );
 
