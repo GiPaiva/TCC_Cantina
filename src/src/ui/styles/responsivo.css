@@ -1,0 +1,36 @@
+@media (max-width:1200px) {
+    div .container .caixa .links .page{
+        font-size: 16px;
+        text-align: center;
+    }
+    div .card .direita .categoria-caixa div .categoria-titulo{
+        font-size: 30px;
+    }
+    div .card .esquerda .categoria-caixa div .categoria-titulo{
+        font-size: 30px;
+    }
+}
+@media(max-width:500px){
+    div .container .caixa .links .page{
+        font-size: 12px;
+        text-align: center;
+    }
+    div .card .direita .categoria-caixa div .categoria-titulo{
+        font-size: 20px;
+    }
+    div .card .esquerda .categoria-caixa div .categoria-titulo{
+        font-size: 25px;
+    }
+    div .card .esquerda div .lista-produto tr td{
+        font-size: 15px;
+    }
+    div .card .direita .lista .lista-produto .lista-produto-itens td{
+        font-size: 15px;
+    }
+    div .card .esquerda .categoria-caixa .body-detalhes{
+        visibility: hidden;
+    }
+    div .card .direita .categoria-caixa .body-detalhesD{
+        visibility: hidden;
+    }
+}
