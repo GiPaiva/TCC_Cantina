@@ -4,7 +4,7 @@ import '../../ui/styles/Cardapio.css';
 import '../../ui/styles/responsivo.css'
 
 
-function Cardapio() {
+function Cardapio(){
 
   // const url = 'http://127.0.0.1:8080/produtos?key=07ad11b5bb6e2de98a535070ba93cdaf';
   // const [dados, setDados] = useState();
@@ -100,8 +100,7 @@ function Cardapio() {
                     <table className='lista-produto'>
                       <tbody className='lista-produto-itens'>
                         <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita
-                        '>Coxinha</td>
+                        <td className='produto-direita'>Coxinha</td>
                       </tbody>
                     </table>
                   </div>

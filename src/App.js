@@ -1,14 +1,11 @@
-// import './App.css';
-// import Cardapio from './pages/Cardapio/index.js';
-import Login from './pages/Login/index.js';
+import React from 'react';
+
+import Rotas from './routes';
+
 import './ui/styles/reset.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Login></Login>
-    </div>
+    <Rotas />
   );
 }
-
-export default App;

@@ -1,5 +1,5 @@
-import Header from "../ui/components/Header";
-import "../ui/styles/Cadastro.css";
+import Header from '../../ui/components/Header/Header.js';
+// import "../../ui/styles/Cadastro.css";
 
 function Cadastro() {
 	return (

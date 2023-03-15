@@ -18,20 +18,10 @@ a{
     text-decoration: none;
 }
 
-body{
-    background-image:
-        url('../imgs/fundo.png');
-    background-repeat: no-repeat;
-    background-size:cover;    
-}
+
 
 @media (max-width:1200px) {
-    body{
-        background-image: 
-        url('../imgs/fundo.png');
-        background-repeat: no-repeat;
-        background-size:cover;
-    }
+    
 }
 @media(max-width:500px){
     body{
