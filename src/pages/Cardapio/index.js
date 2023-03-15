@@ -1,5 +1,9 @@
 // import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
+
 import Header from '../../ui/components/Header/Header.js';
+// import NavBar from '../../ui/components/NavBar/NavBar.js';
+
 import '../../ui/styles/Cardapio.css';
 import '../../ui/styles/responsivo.css'
 
@@ -36,16 +40,16 @@ function Cardapio(){
             <div className='container'>
               <div className='caixa'>
                 <div className='links'>
-                  <a class="page" href="#salgado">Salgado</a>
-                  <a class="page" href="#lanches">Lanches</a>
-                  <a class="page" href="#pasteis">Pasteis</a>
-                  <a class="page" href="#tapioca-salgada">Tapioca-Salgada</a>
-                  <a class="page" href="#tapioca-doce">Tapioca-Doce</a>
-                  <a class="page" href="#sucos">Sucos</a>
-                  <a class="page" href="#refris">Refris</a>
-                  <a class="page" href="#sobremesas">Sobremesas</a>
-                  <a class="page" href="#acai">Açaí</a>
-                  <a class="page" href="#pratos">Pratos</a>
+                  <a className="page" href="#salgado">Salgado</a>
+                  <a className="page" href="#lanches">Lanches</a>
+                  <a className="page" href="#pasteis">Pasteis</a>
+                  <a className="page" href="#tapioca-salgada">Tapioca-Salgada</a>
+                  <a className="page" href="#tapioca-doce">Tapioca-Doce</a>
+                  <a className="page" href="#sucos">Sucos</a>
+                  <a className="page" href="#refris">Refris</a>
+                  <a className="page" href="#sobremesas">Sobremesas</a>
+                  <a className="page" href="#acai">Açaí</a>
+                  <a className="page" href="#pratos">Pratos</a>
                 </div>
               </div>
               <div className='card'>
@@ -340,7 +344,9 @@ function Cardapio(){
                 </div>
     
               </div>
-              <div className='caixa'></div>
+              <div className='caixa'>
+                {/* <NavBar/> */}
+              </div>
             </div>
           </div>
         );

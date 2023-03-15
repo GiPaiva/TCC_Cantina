@@ -10,27 +10,56 @@
         font-size: 30px;
     }
 }
-@media(max-width:500px){
+@media(max-width:540px){
+    div .card{
+        width: 100vw;
+    }
+
+    div .card .esquerda{
+        margin: 20px 0 20px 0;
+    }
+    div .card .direita{
+        margin: 20px 0 20px 0;
+    }
     div .container .caixa .links .page{
         font-size: 12px;
         text-align: center;
     }
+
+
     div .card .direita .categoria-caixa div .categoria-titulo{
         font-size: 25px;
     }
     div .card .esquerda .categoria-caixa div .categoria-titulo{
         font-size: 25px;
     }
+
+
     div .card .esquerda div .lista-produto tbody td{
         font-size: 15px;
     }
     div .card .direita .lista .lista-produto .lista-produto-itens td{
         font-size: 15px;
     }
-    div .card .esquerda .categoria-caixa .body-detalhes{
-        visibility: hidden;
+
+
+    div .card .esquerda .categoria-caixa .body-detalhes .body-detalhes-div1 {
+        margin: 1px;
     }
-    div .card .direita .categoria-caixa .body-detalhesD{
-        visibility: hidden;
+    div .card .esquerda .categoria-caixa .body-detalhes .body-detalhes-div2 {
+        margin: 1px;
+    }
+    div .card .esquerda .categoria-caixa .body-detalhes .body-detalhes-div3 {
+        margin: 1px;
+    }
+
+    div .card .direita .categoria-caixa .body-detalhesD .body-detalhes-div1 {
+        margin: 1px;
+    }
+    div .card .direita .categoria-caixa .body-detalhesD .body-detalhes-div2 {
+        margin: 1px;
+    }
+    div .card .direita .categoria-caixa .body-detalhesD .body-detalhes-div3 {
+        margin: 1px;
     }
 }

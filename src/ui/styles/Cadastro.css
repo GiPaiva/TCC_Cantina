@@ -1,14 +1,22 @@
-.container{
+/* Criei um conteiner padrão */
+/* .container{
     background-color: black;
     align-items: center;
     width: 95vh;
     height: 100vh;
-}
+} */
 
 .title1, .title{
     color:#FFB500 ;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20mm;
+}
+
+/* Fiz algumas modificações apenas por conta que estava conflitando com as outras paginas */
+.cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-cadastro{

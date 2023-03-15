@@ -7,19 +7,24 @@ function Cadastro(){
             <div>
                 <Header></Header>
             </div>
-            <div class="container">
-                    <div class="title1">
-                            <h1 class="title">Cadastro de Cliente</h1>
-                        <div class="formulario">
-                            <form action="" class="form-cadastro">
-                            <input class="inputt" type="text" name="username" id="username" placeholder="Nome"/>
-                            <input class="inputt" type="telefone" name="telefone" id="telefone" placeholder="Telefone"/>
-                            <button class="btn-cadastro" type="submit">Salvar</button>
+            {/* Fiz algumas modificações apenas por conta que estava conflitando com as outras paginas */}
+            <div className='container'>
+                <div className="caixa"></div>
+                <div className="card cadastro">
+                    <div className="title1">
+                            <h1 className="title">Cadastro de Cliente</h1>
+                        <div className="formulario">
+                            <form action="" className="form-cadastro">
+                            <input className="inputt" type="text" name="username" id="username" placeholder="Nome"/>
+                            <input className="inputt" type="telefone" name="telefone" id="telefone" placeholder="Telefone"/>
+                            <button className="btn-cadastro" type="submit">Salvar</button>
                             </form>
-                        </div>
                         </div>
                     </div>
                 </div>
+                <div className="caixa"></div>
+            </div>
+        </div>
     )
 }
 
