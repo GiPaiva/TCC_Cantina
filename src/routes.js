@@ -16,9 +16,6 @@ const Rotas = () => {
         <Route path='/cadastro' element={<Cadastro />} />
       </Routes>
     </BrowserRouter>
-    // <div className="App">
-    //   <Login></Login>
-    // </div>
   );
 }
 

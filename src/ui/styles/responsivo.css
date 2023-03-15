@@ -16,12 +16,12 @@
         text-align: center;
     }
     div .card .direita .categoria-caixa div .categoria-titulo{
-        font-size: 20px;
+        font-size: 25px;
     }
     div .card .esquerda .categoria-caixa div .categoria-titulo{
         font-size: 25px;
     }
-    div .card .esquerda div .lista-produto tr td{
+    div .card .esquerda div .lista-produto tbody td{
         font-size: 15px;
     }
     div .card .direita .lista .lista-produto .lista-produto-itens td{
