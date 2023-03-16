@@ -1,13 +1,20 @@
 import React from "react";
 
-import "../../styles/Cardapio.css"
+// import "../../styles/Cardapio.css";
+import "../../styles/NavBar.css"
+import { useState } from "react";
 
 
 // https://youtu.be/hmoavRdx4YM
 export default function NavBar(){
+    const {showlinks, setshowlinks} = useState(false)
+
+    const handleShowLinks = () => {
+        setshowlinks(!showlinks)
+    }
     return (
         
-        <div className='navbar'>
+        <div className={` navbar ${show-nav ? "show-nav" : "hide-nav"} `} >
             <div className='navbar-links'>
                 <div className="navbar-item">
                     <a className="navbar-link" href="#salgado">Salgado</a>
@@ -39,6 +46,9 @@ export default function NavBar(){
                 <div className="navbar-item">
                     <a className="navbar-link" href="#pratos">Pratos</a>
                 </div>
+                <button className="navbar-burguer" onClick={handleShowLinks}>
+                    <span className="burguer-bar"></span>
+                </button>
             </div>
         </div>
     )
