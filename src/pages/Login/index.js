@@ -13,7 +13,7 @@ function Login() {
           <div className="caixa-login">
           <p className="titulo-login">Login</p>
             <div>
-              <form action="" className="form-login">
+              <form action="POST" className="form-login">
                 <input className="input" type="text" name="username" id="username" placeholder="Username"/>
                 <input className="input" type="password" name="senha" id="senha" placeholder="•••••••"/>
                 <button className="btn-login" type="submit">Entrar</button>

@@ -95,23 +95,36 @@
     justify-content: flex-end;
 }
 .produto-preco-direita{
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     width: 55%;
 }
 .produto-direita{
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
 }
 .produto{
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     width: 55%;
 }
 .produto-preco{
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
 }
+
+.meio-pratos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.pratos{
+    font-size: 60px;
+    color: #FFB500;
+}
+
 
 .caixa{
     width: 25vw;
@@ -126,16 +139,17 @@
     justify-content: center;
     color: black;
     background-color: #d7d7d799;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 5px 20px 0;
 }
 .page{
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: black;
     width: 15vw;
     height: 7vh;
-    font-size: 30px;
+    font-size: 45px;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
 }
@@ -149,14 +163,73 @@
 }
 
 
-.meio-pratos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
+/* ----------------------Responsividade ------------------*/
+@media (max-width:1440px) {
+    .page{
+        font-size: 30px;
+    }
+    .direita .categoria-caixa div .categoria-titulo{
+        font-size: 30px;
+    }
+    .esquerda .categoria-caixa div .categoria-titulo{
+        font-size: 30px;
+    }
 }
-.pratos{
-    font-size: 60px;
-    color: #FFB500;
+@media (max-width:1040px) {
+    .page{
+        font-size: 22px;
+    }
+}
+@media(max-width:540px){
+    div .card{
+        width: 100vw;
+    }
+
+    div .card .esquerda{
+        margin: 20px 0 20px 0;
+    }
+    div .card .direita{
+        margin: 20px 0 20px 0;
+    }
+    div .container .caixa .links .page{
+        font-size: 12px;
+        text-align: center;
+    }
+
+
+    .direita .categoria-caixa div .categoria-titulo{
+        font-size: 25px;
+    }
+    .esquerda .categoria-caixa div .categoria-titulo{
+        font-size: 25px;
+    }
+
+
+    .lista-produto tbody td{
+        font-size: 15px;
+    }
+    .lista-produto-itens td{
+        font-size: 15px;
+    }
+
+
+    .body-detalhes-div1 {
+        margin: 1px;
+    }
+    .body-detalhes-div2 {
+        margin: 1px;
+    }
+    .body-detalhes-div3 {
+        margin: 1px;
+    }
+
+    .body-detalhes-div1 {
+        margin: 1px;
+    }
+    .body-detalhes-div2 {
+        margin: 1px;
+    }
+    .body-detalhes-div3 {
+        margin: 1px;
+    }
 }
