@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Header from '../../ui/components/Header/Header.js';
-
+import Salgados from '../../ui/components/Produtos/Salgados.js';
 
 import '../../ui/styles/Cardapio.css';
 
@@ -35,9 +35,9 @@ function Cardapio(){
           <div>
             <Header></Header>
           </div>
-          <div className='container'>
-            <div className='caixa'>
-              <div className='links'>
+          <div className='container view'>
+            <div className='caixa nav'>
+              <div className='links navbar'>
                 <a className="page" href="#salgado">Salgado</a>
                 <a className="page" href="#lanches">Lanches</a>
                 <a className="page" href="#pasteis">Pasteis</a>
@@ -65,18 +65,7 @@ function Cardapio(){
                 <div>
                   <div className='lista-produto'>
                     <div>
-                      {
-                        //https://youtu.be/BEABf4XVtj8
-                        dados.forEach(element => {
-                          console.log(element)
-                          return(
-                            <div className='lista-produto'>
-                              <li className='produto'>{element.nome}</li>
-                              <li className='produto-preco'>{element}</li>
-                            </div>
-                          )
-                        })
-                      }
+                      <Salgados></Salgados>
                     </div>
                   </div>
                 </div>
@@ -356,7 +345,7 @@ function Cardapio(){
               </div>
   
             </div>
-            <div className='caixa'>
+            <div className='caixa footer'>
             </div>
           </div>
         </div>

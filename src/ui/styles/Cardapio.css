@@ -44,7 +44,7 @@
     display: flex;
 }
 .categoria-titulo{
-    font-size: 55px;
+    font-size: 3vw;
     color: #FFB500;
     width: max-content;
 }
@@ -89,27 +89,26 @@
 }
 .lista-produto{
     width: 70%;
+    padding: 0 1vw 0 1vw;
 }
 .lista-produto-itens{
     display: flex;
     justify-content: flex-end;
 }
-.produto-preco-direita{
-    font-size: 40px;
+.produto-preco-direita {
+    font-size: 2vw;
     color: rgb(255, 255, 255);
-    width: 55%;
-}
-.produto-direita{
-    font-size: 40px;
-    color: rgb(255, 255, 255);
-}
-.produto{
-    font-size: 40px;
-    color: rgb(255, 255, 255);
-    width: 55%;
+    position: relative;
+    right: 10vw;
 }
 .produto-preco{
-    font-size: 40px;
+    font-size: 2vw;
+    color: rgb(255, 255, 255);
+    position: relative;
+    right: 1vw;
+}
+.produto-direita, .produto{
+    font-size: 2vw;
     color: rgb(255, 255, 255);
 }
 
@@ -149,7 +148,7 @@
     color: black;
     width: 15vw;
     height: 7vh;
-    font-size: 45px;
+    font-size: 2vw;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
 }
@@ -165,9 +164,6 @@
 
 /* ----------------------Responsividade ------------------*/
 @media (max-width:1440px) {
-    .page{
-        font-size: 30px;
-    }
     .direita .categoria-caixa div .categoria-titulo{
         font-size: 30px;
     }
@@ -175,25 +171,46 @@
         font-size: 30px;
     }
 }
-@media (max-width:1040px) {
-    .page{
-        font-size: 22px;
-    }
-}
+
 @media(max-width:540px){
-    div .card{
-        width: 100vw;
+    .card{
+        border: 2px double #FFB500;
+        width: 90vw;
+        margin: 10px 0 10px 0;
+    }
+    .page{
+        font-size: 4vw;
+        min-width: 30vw;
+    }
+    .navbar{
+        flex-direction: row;
+    }
+    .nav{
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .nav::-webkit-scrollbar{
+        display: none;
+    }
+    .caixa{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        align-items: center;
+    }
+    .footer{
+        display: none;
+    }
+    .view{
+        display: flex;
+        flex-direction: column;
     }
 
-    div .card .esquerda{
+    .esquerda{
         margin: 20px 0 20px 0;
     }
-    div .card .direita{
+    .direita{
         margin: 20px 0 20px 0;
-    }
-    div .container .caixa .links .page{
-        font-size: 12px;
-        text-align: center;
     }
 
 
