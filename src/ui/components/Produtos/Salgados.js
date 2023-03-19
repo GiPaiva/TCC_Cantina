@@ -7,7 +7,7 @@ export default function Salgados() {
     const [carregado, setCarregado] = useState(false);
   
     async function pegaTodosProdutos() {
-        let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

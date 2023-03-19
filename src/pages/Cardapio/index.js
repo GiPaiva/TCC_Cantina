@@ -54,7 +54,7 @@ function Cardapio(){
               <div className='esquerda'>
                 <div className='categoria-caixa'>
                   <div>
-                    <p className='categoria-titulo' id='salgado'>{dados[0].nome}</p>
+                    <p className='categoria-titulo' id='salgado'>Salgados</p>
                   </div>
                   <div className="body-detalhes">
                     <div className="body-detalhes-div1"></div>
