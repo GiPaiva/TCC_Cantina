@@ -51,7 +51,7 @@
 }
 
 .input::placeholder{
-    font-size: 20px;
+    font-size: 1vw;
 }
 
 
@@ -84,6 +84,9 @@
     }
     .titulo-login{
         font-size: 7vw;
+    }
+    .input::placeholder{
+        font-size: 2vw;
     }
 }
 @media(max-width:700px){
