@@ -1,7 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Header from '../../ui/components/Header/Header.js';
-import Salgados from '../../ui/components/Produtos/Salgados.js';
+
+import Salgados from '../../ui/components/Produtos/Esquerda/Salgados.js';
+import Lanches from '../../ui/components/Produtos/Direita/Lanches.js';
+import Pasteis from '../../ui/components/Produtos/Esquerda/Pasteis.js';
+import TapiocaSalgada from '../../ui/components/Produtos/Direita/TapiocaSalgada.js';
+import TapiocaDoce from '../../ui/components/Produtos/Esquerda/TapiocaDoce.js';
+import Pizza from '../../ui/components/Produtos/Direita/Pizza.js';
+import Sobremesas from '../../ui/components/Produtos/Esquerda/Sobremesa.js';
+import Acai from '../../ui/components/Produtos/Direita/Acai.js';
+import PratosProntos from '../../ui/components/Produtos/Esquerda/PratosProntos.js';
+import PorKilo from '../../ui/components/Produtos/Direita/PorKilo.js';
+import Bebidas from '../../ui/components/Produtos/Esquerda/Bebidas.js';
 
 import '../../ui/styles/Cardapio.css';
 
@@ -65,7 +76,7 @@ function Cardapio(){
                 <div>
                   <div className='lista-produto'>
                     <div>
-                      <Salgados></Salgados>
+                      <Salgados/>
                     </div>
                   </div>
                 </div>
@@ -83,14 +94,7 @@ function Cardapio(){
                   </div>
                 </div>
                 <div className='lista'>
-                  <table className='lista-produto'>
-                    <tbody className='lista-produto-itens'>
-                      <tr>
-                        <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita'>Coxinha</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Lanches/>
                 </div>
               </div>
   
@@ -106,14 +110,7 @@ function Cardapio(){
                   </div>
                 </div>
                 <div>
-                  <table className='lista-produto'>
-                    <tbody>
-                      <tr>
-                        <td className='produto'>Coxinha</td>
-                        <td className='produto-preco'>Preço</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Pasteis/>
                 </div>
               </div>
   
@@ -130,14 +127,7 @@ function Cardapio(){
                 </div>
   
                 <div className='lista'>
-                  <table className='lista-produto'>
-                    <tbody className='lista-produto-itens'>
-                      <tr>
-                        <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita'>Coxinha</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <TapiocaSalgada/>
                 </div>
               </div>
   
@@ -155,59 +145,7 @@ function Cardapio(){
   
                 <div>
                   <table className='lista-produto'>
-                    <tbody>
-                      <tr>
-                        <td className='produto'>Coxinha</td>
-                        <td className='produto-preco'>Preço</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-  
-              <div className='direita'>
-                <div className='categoria-caixa'>
-                  <div className="body-detalhesD">
-                    <div className="body-detalhes-div2"></div>
-                    <div className="body-detalhes-div1"></div>
-                    <div className="body-detalhes-div3"></div>
-                  </div>
-                  <div>
-                    <p className='categoria-titulo' id='sucos'>Sucos</p>
-                  </div>
-                </div>
-  
-                <div className='lista'>
-                  <table className='lista-produto'>
-                    <tbody className='lista-produto-itens'>
-                      <tr>
-                        <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita'>Coxinha</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-  
-              <div className='esquerda'>
-                <div className='categoria-caixa'>
-                  <div>
-                    <p className='categoria-titulo' id='refris'>Refris</p>
-                  </div>
-                  <div className="body-detalhes">
-                    <div className="body-detalhes-div3"></div>
-                    <div className="body-detalhes-div1"></div>
-                    <div className="body-detalhes-div2"></div>
-                  </div>
-                </div>
-                <div>
-                  <table className='lista-produto'>
-                    <tbody>
-                      <tr>
-                        <td className='produto'>Coxinha</td>
-                        <td className='produto-preco'>Preço</td>
-                      </tr>
-                    </tbody>
+                    <TapiocaDoce/>
                   </table>
                 </div>
               </div>
@@ -224,14 +162,7 @@ function Cardapio(){
                   </div>
                 </div>
                 <div className='lista'>
-                  <table className='lista-produto'>
-                    <tbody className='lista-produto-itens'>
-                      <tr>
-                        <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita'>Coxinha</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Pizza/>
                 </div>
               </div>
   
@@ -247,14 +178,7 @@ function Cardapio(){
                   </div>
                 </div>
                 <div>
-                  <table className='lista-produto'>
-                    <tbody>
-                      <tr>
-                        <td className='produto'>Coxinha</td>
-                        <td className='produto-preco'>Preço</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Sobremesas/>
                 </div>
               </div>
   
@@ -270,17 +194,26 @@ function Cardapio(){
                   </div>
                 </div>
                 <div className='lista'>
-                  <table className='lista-produto'>
-                    <tbody className='lista-produto-itens'>
-                      <tr>
-                        <td className='produto-preco-direita'>Preço</td>
-                        <td className='produto-direita'>Coxinha</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <Acai/>
                 </div>
               </div>
   
+              <div className='esquerda'>
+                <div className='categoria-caixa'>
+                  <div>
+                    <p className='categoria-titulo' id='refris'>Bebidas</p>
+                  </div>
+                  <div className="body-detalhes">
+                    <div className="body-detalhes-div3"></div>
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div2"></div>
+                  </div>
+                </div>
+                <div>
+                  <Bebidas/>
+                </div>
+              </div>
+
               <div className='meio'>
                 <div className='meio-pratos'>
                   <div className="body-detalhesD">
@@ -308,14 +241,7 @@ function Cardapio(){
                       </div>
                     </div>
                     <div>
-                      <table className='lista-produto'>
-                        <tbody>
-                          <tr>
-                            <td className='produto'>Coxinha</td>
-                            <td className='produto-preco'>Preço</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <PratosProntos/>
                     </div>
                   </div>
   
@@ -331,14 +257,7 @@ function Cardapio(){
                       </div>
                     </div>
                     <div className='lista'>
-                      <table className='lista-produto'>
-                        <tbody className='lista-produto-itens'>
-                          <tr>
-                            <td className='produto-preco-direita'>Preço</td>
-                            <td className='produto-direita'>Coxinha</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <PorKilo/>
                     </div>
                   </div>
                 </div>

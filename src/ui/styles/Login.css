@@ -19,7 +19,7 @@
 }
 
 .titulo-login{
-    font-size: 70px;
+    font-size: 5vw;
     color: #FFB500;
     margin: 5px;
     width: 15vw;
@@ -71,7 +71,7 @@
     transform: scale(1.1);
 }
 
-@media(max-width:1200px){
+@media(max-width:1440px){
     .caixa-login{
         width: 40vw;
         flex-direction: column;
@@ -81,6 +81,9 @@
     }
     .btn-login{
         width: 15vw;
+    }
+    .titulo-login{
+        font-size: 7vw;
     }
 }
 @media(max-width:700px){
