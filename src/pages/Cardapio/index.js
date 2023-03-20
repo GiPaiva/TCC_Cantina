@@ -2,7 +2,7 @@
 import Header from '../../ui/components/Header/Header.js';
 import '../../ui/styles/Cardapio.css';
 import '../../ui/styles/responsivo.css'
-
+// Importação do componente Header, junto da estilização cardapio.css e responsivo.css
 
 function Cardapio(){
 
@@ -31,9 +31,11 @@ function Cardapio(){
       return (
           <div>
             <div>
+              {/* Componente Header, fixado na parte de cima das telas */}
               <Header></Header>
             </div>
             <div className='container'>
+            {/* Botões laterias que facilitam a procura por itens do cardápio */}        
               <div className='caixa'>
                 <div className='links'>
                   <a class="page" href="#salgado">Salgado</a>
@@ -54,6 +56,7 @@ function Cardapio(){
                     <div>
                       <p className='categoria-titulo' id='salgado'>Salgados</p>
                     </div>
+                    {/* Div body-detalhes com o uso do CSS para estilização e criação de barras flutuantes ao lado da descrição de produto */}
                     <div className="body-detalhes">
                       <div className="body-detalhes-div1"></div>
                       <div className="body-detalhes-div2"></div>
@@ -87,6 +90,7 @@ function Cardapio(){
     
                 <div className='direita'>
                   <div className='categoria-caixa'>
+                    {/* Div body-detalhesD faz mesma função do seu homônimo acima, porém para o lado direito*/}
                     <div className="body-detalhesD">
                       <div className="body-detalhes-div2"></div>
                       <div className="body-detalhes-div3"></div>
