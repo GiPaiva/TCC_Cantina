@@ -60,12 +60,12 @@
     height: 3vw;
 }
 
-@media (max-width:700px){
+@media (max-width:1200px){
     .header-logo{
-        font-size: 10vw;
+        font-size: 40px;
     }
     .logo{
-        width: 20vw;
+        width: 12vw;
     }
 
     .header-btn-a{

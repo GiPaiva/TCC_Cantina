@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import '../../../styles/Cardapio.css';
+import React, { useContext, useEffect, useState } from 'react';
+import '../../styles/Cardapio.css';
 
-export default function Bebidas() {
+export default function Salgados() {
 
     const [dados, setDados] = useState();
     const [carregado, setCarregado] = useState(false);
   
     async function pegaTodosProdutos() {
-        let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos/bebidas?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,20 +26,20 @@ export default function Bebidas() {
   
   
     if (carregado) {
-        const produtos = []
-        const protudosPreco = []
+        const salgados = []
+        const salgadosPreco = []
         dados.forEach(element => {
             console.log(element)
 
-            produtos.push(<tr><td className='produto'>{element.nome}</td>)
-            protudosPreco.push(<td className='produto-preco'>R$ {element.preco}</td></tr>)
+            salgados.push(<tr><td className='produto'>{element.nome}</td>)
+            salgadosPreco.push(<td className='produto-preco'>{element.preco}</td></tr>)
                 
         })
         return (
-            <table className='lista-produto'>
+            <table>
                 <tbody className='lista-produto'>
-                    {produtos}
-                    {protudosPreco}
+                    {salgados}
+                    {salgadosPreco}
                 </tbody>
             </table>
         )
