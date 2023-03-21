@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import '../../styles/Cardapio.css';
+import React, { useEffect, useState } from 'react';
+import '../../../styles/Cardapio.css';
 
 export default function Salgados() {
 
@@ -26,22 +26,22 @@ export default function Salgados() {
   
   
     if (carregado) {
-        const salgados = []
-        const salgadosPreco = []
+        const produtos = []
+        const produtosPreco = []
         dados.forEach(element => {
             console.log(element)
 
-            salgados.push(<tr><td className='produto'>{element.nome}</td>)
-            salgadosPreco.push(<td className='produto-preco'>{element.preco}</td></tr>)
+            produtos.push(<div className='produto'>{element.nome}</div>)
+            produtosPreco.push(<div className='produto-preco'>R$ {element.preco}</div>)
                 
         })
         return (
-            <table>
-                <tbody className='lista-produto'>
-                    {salgados}
-                    {salgadosPreco}
-                </tbody>
-            </table>
+            <div className='lista-produto'>
+                <div className='linha-produto'>
+                    {produtos}
+                    {produtosPreco}
+                </div>
+            </div>
         )
     } else { return }
 }

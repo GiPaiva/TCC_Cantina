@@ -11,8 +11,8 @@ function Cadastro(){
             <div className='container'>
                 <div className="caixa"></div>
                 <div className="card cadastro">
-                    <div className="title1" id="title">
-                            <h1 className="title">Cadastro de<br></br> Cliente</h1>
+                    <div className="title1" id="">
+                            <h1 className="title">Cadastro de Cliente</h1>
                             <br></br>
                             <br></br>
                         <div className="formulario">

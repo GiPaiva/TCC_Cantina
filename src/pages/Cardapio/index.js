@@ -7,7 +7,7 @@ import Pasteis from '../../ui/components/Produtos/Esquerda/Pasteis.js';
 import TapiocaSalgada from '../../ui/components/Produtos/Direita/TapiocaSalgada.js';
 import TapiocaDoce from '../../ui/components/Produtos/Esquerda/TapiocaDoce.js';
 import Pizza from '../../ui/components/Produtos/Direita/Pizza.js';
-import Sobremesas from '../../ui/components/Produtos/Esquerda/Sobremesa.js';
+import Sobremesas from '../../ui/components/Produtos/Esquerda/Sobremesas.js';
 import Acai from '../../ui/components/Produtos/Direita/Acai.js';
 import PratosProntos from '../../ui/components/Produtos/Esquerda/PratosProntos.js';
 import PorKilo from '../../ui/components/Produtos/Direita/PorKilo.js';
@@ -20,25 +20,25 @@ import '../../ui/styles/Cardapio.css';
 
 function Cardapio(){
 
-  const url = 'http://127.0.0.1:8080/produtos?key=07ad11b5bb6e2de98a535070ba93cdaf';
   const [dados, setDados] = useState();
   const [carregado, setCarregado] = useState(false);
 
-  async function pegaTodosProdutos(url) {
-    let response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      mode: 'cors'
-    });
-    let data = await response.json();
-    setDados(data);
-    setCarregado(true);
+  async function pegaTodosProdutos() {
+      let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          mode: 'cors'
+      });
+      let data = await response.json();
+      console.log(data);
+      setDados(data);
+      setCarregado(true);
   }
 
   useEffect(() => {
-    pegaTodosProdutos(url);
+      pegaTodosProdutos();
   }, []);
 
   if (carregado) {
@@ -64,7 +64,12 @@ function Cardapio(){
                 <a className="page" href="#pratos">Pratos</a>
               </div>
             </div>
+
+
+
+
             <div className='card'>
+
               <div className='esquerda'>
                 <div className='categoria-caixa'>
                   <div>
@@ -132,15 +137,15 @@ function Cardapio(){
                 </div>
               </div>
   
-              <div className='direita'>
+              <div className='esquerda'>
                 <div className='categoria-caixa'>
-                  <div className="body-detalhesD">
+                  <div>
+                    <p className='categoria-titulo' id='tapioca-doce'>Tapioca-Doce</p>
+                  </div>
+                  <div className="body-detalhes">
                     <div className="body-detalhes-div1"></div>
                     <div className="body-detalhes-div3"></div>
                     <div className="body-detalhes-div2"></div>
-                  </div>
-                  <div>
-                    <p className='categoria-titulo' id='tapioca-doce'>Tapioca-Doce</p>
                   </div>
                 </div>
   
@@ -149,116 +154,116 @@ function Cardapio(){
                 </div>
               </div>
   
-              <div className='esquerda'>
+              <div className='direita'>
                 <div className='categoria-caixa'>
-                  <div className="body-detalhes">
+                  <div className="body-detalhesD">
                     <div className="body-detalhes-div2"></div>
                     <div className="body-detalhes-div3"></div>
                     <div className="body-detalhes-div1"></div>
                   </div>
+                  <div>
+                    <p className='categoria-titulo' id='pizza'>Pizza</p>
+                  </div>
+                </div>
+                <div className='lista'>
+                  <Pizza/>
+                </div>
+              </div>
+
+              <div className='esquerda'>
+                <div className='categoria-caixa'>
+                  <div>
+                    <p className='categoria-titulo' id='sobremesas'>Sobremesas</p>
+                  </div>
+                  <div className="body-detalhes">
+                    <div className="body-detalhes-div2"></div>
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div3"></div>
+                  </div>
                 </div>
                 <div>
-                  <p className='categoria-titulo' id='pizza'>Pizza</p>
-                </div>
-              </div>
-              <div className='lista'>
-                <Pizza/>
-              </div>
-            </div>
-
-            <div className='esquerda'>
-              <div className='categoria-caixa'>
-                <div>
-                  <p className='categoria-titulo' id='sobremesas'>Sobremesas</p>
-                </div>
-                <div className="body-detalhes">
-                  <div className="body-detalhes-div2"></div>
-                  <div className="body-detalhes-div1"></div>
-                  <div className="body-detalhes-div3"></div>
-                </div>
-              </div>
-              <div>
-                <Sobremesas/>
-              </div>
-            </div>
-
-            <div className='direita'>
-              <div className='categoria-caixa'>
-                <div className="body-detalhesD">
-                  <div className="body-detalhes-div1"></div>
-                  <div className="body-detalhes-div3"></div>
-                  <div className="body-detalhes-div2"></div>
-                </div>
-                <div>
-                  <p className='categoria-titulo' id='acai'>Açaí</p>
-                </div>
-              </div>
-              <div className='lista'>
-                <Acai/>
-              </div>
-            </div>
-
-            <div className='esquerda'>
-              <div className='categoria-caixa'>
-                <div>
-                  <p className='categoria-titulo' id='refris'>Bebidas</p>
-                </div>
-                <div className="body-detalhes">
-                  <div className="body-detalhes-div3"></div>
-                  <div className="body-detalhes-div1"></div>
-                  <div className="body-detalhes-div2"></div>
-                </div>
-              </div>
-              <div>
-                <Bebidas/>
-              </div>
-            </div>
-
-            <div className='meio'>
-              <div className='meio-pratos'>
-                <div className="body-detalhesD">
-                  <div className="body-detalhes-div1"></div>
-                  <div className="body-detalhes-div3"></div>
-                  <div className="body-detalhes-div2"></div>
-                </div>
-                <p className='pratos' id='pratos'>Pratos</p>
-                <div className="body-detalhes">
-                  <div className="body-detalhes-div3"></div>
-                  <div className="body-detalhes-div1"></div>
-                  <div className="body-detalhes-div2"></div>
+                  <Sobremesas/>
                 </div>
               </div>
 
-              <div>
-                <div className='esquerda'>
-                  <div className='categoria-caixa'>
-                    <div>
-                      <p className='categoria-titulo' id='sobremesas'>Pratos Prontos</p>
-                    </div>
-                    <div className="body-detalhes">
-                      <div className="body-detalhes-div2"></div>
-                      <div className="body-detalhes-div3"></div>
-                      <div className="body-detalhes-div1"></div>
-                    </div>
+              <div className='direita'>
+                <div className='categoria-caixa'>
+                  <div className="body-detalhesD">
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div3"></div>
+                    <div className="body-detalhes-div2"></div>
                   </div>
                   <div>
-                    <PratosProntos/>
+                    <p className='categoria-titulo' id='acai'>Açaí</p>
+                  </div>
+                </div>
+                <div className='lista'>
+                  <Acai/>
+                </div>
+              </div>
+
+              <div className='esquerda'>
+                <div className='categoria-caixa'>
+                  <div>
+                    <p className='categoria-titulo' id='refris'>Bebidas</p>
+                  </div>
+                  <div className="body-detalhes">
+                    <div className="body-detalhes-div3"></div>
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div2"></div>
+                  </div>
+                </div>
+                <div>
+                  <Bebidas/>
+                </div>
+              </div>
+
+              <div className='meio'>
+                <div className='meio-pratos'>
+                  <div className="body-detalhesD">
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div3"></div>
+                    <div className="body-detalhes-div2"></div>
+                  </div>
+                  <p className='pratos' id='pratos'>Pratos</p>
+                  <div className="body-detalhes">
+                    <div className="body-detalhes-div3"></div>
+                    <div className="body-detalhes-div1"></div>
+                    <div className="body-detalhes-div2"></div>
                   </div>
                 </div>
 
-                <div className='direita'>
-                  <div className='categoria-caixa'>
-                    <div className="body-detalhesD">
-                      <div className="body-detalhes-div3"></div>
-                      <div className="body-detalhes-div1"></div>
-                      <div className="body-detalhes-div2"></div>
+                <div>
+                  <div className='esquerda'>
+                    <div className='categoria-caixa'>
+                      <div>
+                        <p className='categoria-titulo'>Pratos Prontos</p>
+                      </div>
+                      <div className="body-detalhes">
+                        <div className="body-detalhes-div2"></div>
+                        <div className="body-detalhes-div3"></div>
+                        <div className="body-detalhes-div1"></div>
+                      </div>
                     </div>
                     <div>
-                      <p className='categoria-titulo' id='acai'>Por Kilo</p>
+                      <PratosProntos/>
                     </div>
                   </div>
-                  <div className='lista'>
-                    <PorKilo/>
+
+                  <div className='direita'>
+                    <div className='categoria-caixa'>
+                      <div className="body-detalhesD">
+                        <div className="body-detalhes-div3"></div>
+                        <div className="body-detalhes-div1"></div>
+                        <div className="body-detalhes-div2"></div>
+                      </div>
+                      <div>
+                        <p className='categoria-titulo'>Por Kilo</p>
+                      </div>
+                    </div>
+                    <div className='lista'>
+                      <PorKilo/>
+                    </div>
                   </div>
                 </div>
               </div>

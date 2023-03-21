@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Cardapio from './pages/Cardapio/index.js';
 import Login from './pages/Login/index.js';
-import Cadastro from './pages/Cadastro/Cadastro.js';
+import Cadastro from './pages/Cadastro/index.js'; 
 // Importação dos itens Cardapio, Login e Cadastro que serão renderizados nas rotas
 
 import './ui/styles/reset.css';

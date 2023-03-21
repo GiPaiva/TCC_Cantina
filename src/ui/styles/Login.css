@@ -1,10 +1,7 @@
-/* .container {
-	margin: 0 auto;
+.centro {
 	display: flex;
     justify-content: center;
-	align-items: center;
-	height: calc(100vh - 10vh);
-} */
+}
 
 .caixa-login{
     background-color: #000;
@@ -19,7 +16,7 @@
 }
 
 .titulo-login{
-    font-size: 70px;
+    font-size: 5vw;
     color: #FFB500;
     margin: 5px;
     width: 15vw;
@@ -71,7 +68,7 @@
     transform: scale(1.1);
 }
 
-@media(max-width:1200px){
+@media(max-width:1440px){
     .caixa-login{
         width: 40vw;
         flex-direction: column;
@@ -82,15 +79,16 @@
     .btn-login{
         width: 15vw;
     }
-<<<<<<< HEAD
     .titulo-login{
         font-size: 7vw;
     }
     .input::placeholder{
         font-size: 2vw;
     }
-=======
->>>>>>> parent of 8802cd1 (imports componentes)
+
+    .titulo-login{
+        font-size: 7vw;
+    }
 }
 @media(max-width:700px){
     .caixa-login{

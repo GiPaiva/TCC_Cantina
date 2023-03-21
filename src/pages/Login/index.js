@@ -8,7 +8,7 @@ function Login() {
       <div>
         <Header></Header>
       </div>
-      <main className="container">
+      <main className="container centro">
         <div className="informacoes">
           <div className="caixa-login">
           <p className="titulo-login">Login</p>
