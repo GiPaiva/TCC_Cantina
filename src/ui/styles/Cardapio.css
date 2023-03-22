@@ -87,21 +87,18 @@
     justify-content: flex-end;
 }
 .produto-preco-direita {
-    font-size: 2vw;
     color: rgb(255, 255, 255);
     position: relative;
     right: 10vw;
 }
-.produto-preco{
-    font-size: 2vw;
-    color: rgb(255, 255, 255);
-    position: relative;
-    right: 1vw;
-}
-.produto-direita, .produto{
+.produto-preco, 
+.produto-direita, 
+.produto,
+.produto-preco-direita {
     font-size: 2vw;
     color: rgb(255, 255, 255);
 }
+
 .linha-produto{
     display: flex;
     align-items: center;
@@ -210,7 +207,8 @@
         width: 100%;
         height: 10%;
         display: flex;
-        align-items: center;
+        position: relative;
+        left: 0;
     }
     .footer{
         display: none;
@@ -251,5 +249,13 @@
     
     .prato{
         font-size: 10vw;
+    }
+}
+@media(max-width: 900px){
+    .produto-preco, 
+    .produto-direita, 
+    .produto,
+    .produto-preco-direita {
+        font-size: 4vw;
     }
 }
