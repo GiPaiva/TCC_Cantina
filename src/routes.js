@@ -1,13 +1,15 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
+// Importação dos itens Cardapio, Login e Cadastro que serão renderizados nas rotas
 import Cardapio from './pages/Cardapio/index.js';
 import Login from './pages/Login/index.js';
 import Cadastro from './pages/Cadastro/index.js'; 
-// Importação dos itens Cardapio, Login e Cadastro que serão renderizados nas rotas
+import ListaProduto from './pages/ListaProduto/index.js'; 
 
-import './ui/styles/reset.css';
+
 // Importação do item reset.css que faz a padronização de estilos dos navegadores
+import './ui/styles/reset.css';
 
 const Rotas = () => {
   return (
@@ -20,6 +22,7 @@ const Rotas = () => {
         <Route path='/' element={<Cardapio />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/listaproduto' element={<ListaProduto />} />
       </Routes>
     </BrowserRouter>
   );

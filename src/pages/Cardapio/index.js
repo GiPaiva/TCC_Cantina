@@ -57,8 +57,7 @@ function Cardapio(){
                 <a className="page" href="#pasteis">Pasteis</a>
                 <a className="page" href="#tapioca-salgada">Tapioca-Salgada</a>
                 <a className="page" href="#tapioca-doce">Tapioca-Doce</a>
-                <a className="page" href="#sucos">Sucos</a>
-                <a className="page" href="#refris">Refris</a>
+                <a className="page" href="#bebidas">Bebidas</a>
                 <a className="page" href="#sobremesas">Sobremesas</a>
                 <a className="page" href="#acai">Açaí</a>
                 <a className="page" href="#pratos">Pratos</a>
@@ -205,7 +204,7 @@ function Cardapio(){
               <div className='esquerda'>
                 <div className='categoria-caixa'>
                   <div>
-                    <p className='categoria-titulo' id='refris'>Bebidas</p>
+                    <p className='categoria-titulo' id='bebidas'>Bebidas</p>
                   </div>
                   <div className="body-detalhes">
                     <div className="body-detalhes-div3"></div>
@@ -269,7 +268,7 @@ function Cardapio(){
               </div>
             </div>
           </div>
-          <div className='caixa footer'></div>
+          {/* <div className='caixa footer'></div> */}
         </div>
       );
   }
