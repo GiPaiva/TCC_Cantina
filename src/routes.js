@@ -5,7 +5,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cardapio from './pages/Cardapio/index.js';
 import Login from './pages/Login/index.js';
 import Cadastro from './pages/Cadastro/index.js'; 
-import ListaProduto from './pages/ListaProduto/index.js'; 
+// import ListaProduto from './pages/ListaProduto/index.js'; 
 
 
 // Importação do item reset.css que faz a padronização de estilos dos navegadores
@@ -22,7 +22,7 @@ const Rotas = () => {
         <Route path='/' element={<Cardapio />} />
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro' element={<Cadastro />} />
-        <Route path='/listaproduto' element={<ListaProduto />} />
+        {/* <Route path='/listaproduto' element={<ListaProduto />} /> */}
       </Routes>
     </BrowserRouter>
   );

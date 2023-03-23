@@ -78,36 +78,30 @@
 .lista{
     display: flex;
     justify-content: flex-end;
+    padding: 0 1vw 0 1vw;
 }
 .lista-produto{
     padding: 0 1vw 0 1vw;
 }
-.lista-produto-itens{
-    display: flex;
-    justify-content: flex-end;
-}
-.produto-preco-direita {
-    color: rgb(255, 255, 255);
-    position: relative;
-    right: 10vw;
-}
-.produto-preco, 
-.produto-direita, 
 .produto,
-.produto-preco-direita {
+.produto-preco,
+.produto-direita{
     font-size: 2vw;
     color: rgb(255, 255, 255);
 }
-
-.linha-produto{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 60%;
-    justify-content: space-between;
+.produto-direita,
+.produto{
+    min-width: 20.5vw;
 }
 
+.produto-direita{
+    text-align: end;
+}
+.produto-preco{
+    text-align: center;
+}
 
+/* Parte de Pratos Prontos e Por kilo */
 .meio-pratos{
     display: flex;
     justify-content: center;
@@ -121,6 +115,9 @@
 }
 
 
+
+
+/* Nav Lateral */
 .caixa{
     width: 25vw;
     display: flex;
@@ -128,7 +125,6 @@
     position: absolute;
     left: 0;
 }
-
 .links{
     display: flex;
     flex-direction: column;
@@ -167,7 +163,8 @@
     .esquerda .categoria-caixa div .categoria-titulo{
         font-size: 4vw;
     }
-    .lista-produto tbody td{
+    .lista-produto tbody td,
+    .lista tbody td{
         font-size: 3vw;
     }
 }
@@ -233,8 +230,13 @@
         font-size: 6vw;
     }
 
-    .lista-produto tbody td{
+    .lista-produto tbody td,
+    .lista tbody td{
         font-size: 4vw;
+    }
+    .produto-direita,
+    .produto{
+        min-width: 35vw;
     }
     .pratos{
         font-size: 8vw;
@@ -249,13 +251,5 @@
     
     .prato{
         font-size: 10vw;
-    }
-}
-@media(max-width: 900px){
-    .produto-preco, 
-    .produto-direita, 
-    .produto,
-    .produto-preco-direita {
-        font-size: 4vw;
     }
 }

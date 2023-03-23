@@ -3,45 +3,44 @@ import '../../../styles/Cardapio.css';
 
 export default function Salgados() {
 
-    const [dados, setDados] = useState();
+    const [userDados, setUserDados] = useState([]);
     const [carregado, setCarregado] = useState(false);
-  
-    async function pegaTodosProdutos() {
-        let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+
+    useEffect( () => {
+        const getDados = async()=>{
+        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
             mode: 'cors'
         });
-        let data = await response.json();
-        console.log(data);
-        setDados(data);
+        const resDados= await reqDados.json();
+        console.log(resDados);
+        setUserDados(resDados);
         setCarregado(true);
-    }
-  
-    useEffect(() => {
-        pegaTodosProdutos();
+        }
+        getDados();
     }, []);
   
-  
     if (carregado) {
-        const produtos = []
-        const produtosPreco = []
-        dados.forEach(element => {
-            console.log(element)
-
-            produtos.push(<div className='produto'>{element.nome}</div>)
-            produtosPreco.push(<div className='produto-preco'>R$ {element.preco}</div>)
-                
-        })
         return (
-            <div className='lista-produto'>
-                <div className='linha-produto'>
-                    {produtos}
-                    {produtosPreco}
-                </div>
-            </div>
+            <table className='lista-produto'>
+                <tbody>
+                    {
+                        userDados.map((uDados, index)=>(
+                            <tr key={index}>
+                                <td className='col produto'>{uDados.nome}</td>
+                                <td className='col produto-preco'>R$ {uDados.preco}</td>
+                                {/* <td>
+                                <Link to={"/editProd" + uDados.nome} >Editar</Link>
+                                <Link to="/deletProd" >Deletar</Link>
+                                </td> */}
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         )
     } else { return }
 }

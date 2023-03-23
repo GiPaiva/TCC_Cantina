@@ -1,13 +1,9 @@
 import React from 'react';
-import Header from '../../ui/components/Header/Header';
 import '../../ui/styles/Login.css';
 
 function Login() {
   return (
     <div>
-      <div>
-        <Header></Header>
-      </div>
       <main className="container centro">
         <div className="informacoes">
           <div className="caixa-login">

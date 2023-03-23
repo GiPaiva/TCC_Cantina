@@ -1,12 +1,8 @@
-import Header from "../../ui/components/Header/Header";
 import '../../ui/styles/Cadastro.css';
 
 function Cadastro(){
     return (
         <div>
-            <div>
-                <Header></Header>
-            </div>
             {/* Fiz algumas modificações apenas por conta que estava conflitando com as outras paginas */}
             <div className='container'>
                 <div className="caixa"></div>

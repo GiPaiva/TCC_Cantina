@@ -10,17 +10,16 @@ import Pizza from '../../ui/components/Produtos/Direita/Pizza.js';
 import Sobremesas from '../../ui/components/Produtos/Esquerda/Sobremesas.js';
 import Acai from '../../ui/components/Produtos/Direita/Acai.js';
 import PratosProntos from '../../ui/components/Produtos/Esquerda/PratosProntos.js';
-import PorKilo from '../../ui/components/Produtos/Direita/PorKilo.js';
+import PorKilo from '../../ui/components/Produtos/Direita/PorQuilo.js';
 import Bebidas from '../../ui/components/Produtos/Esquerda/Bebidas.js';
 
 // Importação do componente Header, junto da estilização cardapio.css e responsivo.css
-import Header from '../../ui/components/Header/Header.js';
 import '../../ui/styles/Cardapio.css';
+// import { Link } from 'react-router-dom';
 
 
 function Cardapio(){
-
-  const [dados, setDados] = useState();
+  const [userDados, setUserDados] = useState([]);
   const [carregado, setCarregado] = useState(false);
 
   async function pegaTodosProdutos() {
@@ -33,7 +32,7 @@ function Cardapio(){
       });
       let data = await response.json();
       console.log(data);
-      setDados(data);
+      setUserDados(data);
       setCarregado(true);
   }
 
@@ -44,10 +43,6 @@ function Cardapio(){
   if (carregado) {
       return (
         <div>
-          <div>
-            {/* Componente Header, fixado na parte de cima das telas */}
-            <Header></Header>
-          </div>
           <div className='container view'>
             {/* Botões laterias que facilitam a procura por itens do cardápio */}
             <div className='caixa nav'>
@@ -257,7 +252,7 @@ function Cardapio(){
                         <div className="body-detalhes-div2"></div>
                       </div>
                       <div>
-                        <p className='categoria-titulo'>Por Kilo</p>
+                        <p className='categoria-titulo'>Por Quilo</p>
                       </div>
                     </div>
                     <div className='lista'>
