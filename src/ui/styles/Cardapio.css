@@ -93,13 +93,10 @@
 .produto{
     min-width: 20.5vw;
 }
-
 .produto-direita{
     text-align: end;
 }
-.produto-preco{
-    text-align: center;
-}
+
 
 /* Parte de Pratos Prontos e Por kilo */
 .meio-pratos{
@@ -122,6 +119,8 @@
     width: 25vw;
     display: flex;
     align-items: center;
+}
+.nav{
     position: absolute;
     left: 0;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../../styles/Cardapio.css';
-
+import { Link } from 'react-router-dom';
 
 export default function Salgados() {
 
@@ -9,7 +9,7 @@ export default function Salgados() {
 
     useEffect( () => {
         const getDados = async()=>{
-        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos/porquilo?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,13 +26,17 @@ export default function Salgados() {
   
     if (carregado) {
         return (
-            <table className='lista-produto'>
+            <table className='lista'>
                 <tbody>
                     {
                         userDados.map((uDados, index)=>(
                             <tr key={index}>
-                                <td className='col produto'>{uDados.nome}</td>
+                                <td className='col btn'>
+                                    <Link className='btn-delet' to={"/deletProd" + uDados.nome} >Deletar</Link>
+                                    <Link className='btn-edit' to={"/editProd" + uDados.nome} >Editar</Link>
+                                </td>
                                 <td className='col produto-preco'>R$ {uDados.preco}</td>
+                                <td className='col produto-direita'>{uDados.nome}</td>
                             </tr>
                         ))
                     }

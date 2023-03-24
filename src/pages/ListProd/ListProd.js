@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 
-import Salgados from '../../ui/components/Produtos/Esquerda/Salgados.js';
-import Lanches from '../../ui/components/Produtos/Direita/Lanches.js';
-import Pasteis from '../../ui/components/Produtos/Esquerda/Pasteis.js';
-import TapiocaSalgada from '../../ui/components/Produtos/Direita/TapiocaSalgada.js';
-import TapiocaDoce from '../../ui/components/Produtos/Esquerda/TapiocaDoce.js';
-import Pizza from '../../ui/components/Produtos/Direita/Pizza.js';
-import Sobremesas from '../../ui/components/Produtos/Esquerda/Sobremesas.js';
-import Acai from '../../ui/components/Produtos/Direita/Acai.js';
-import PratosProntos from '../../ui/components/Produtos/Esquerda/PratosProntos.js';
-import PorKilo from '../../ui/components/Produtos/Direita/PorQuilo.js';
-import Bebidas from '../../ui/components/Produtos/Esquerda/Bebidas.js';
+//Imgs
+import listaimg from '../../ui/imgs/lista.png';
+import cadastroimg from '../../ui/imgs/cadastro.png';
+import compraimg from '../../ui/imgs/compra.png';
+
+//Componentes dos Produtos
+import Salgados from '../../ui/components/ProdutosEdit/Esquerda/Salgados.js';
+import Lanches from '../../ui/components/ProdutosEdit/Direita/Lanches.js';
+import Pasteis from '../../ui/components/ProdutosEdit/Esquerda/Pasteis.js';
+import TapiocaSalgada from '../../ui/components/ProdutosEdit/Direita/TapiocaSalgada.js';
+import TapiocaDoce from '../../ui/components/ProdutosEdit/Esquerda/TapiocaDoce.js';
+import Pizza from '../../ui/components/ProdutosEdit/Direita/Pizza.js';
+import Sobremesas from '../../ui/components/ProdutosEdit/Esquerda/Sobremesas.js';
+import Acai from '../../ui/components/ProdutosEdit/Direita/Acai.js';
+import PratosProntos from '../../ui/components/ProdutosEdit/Esquerda/PratosProntos.js';
+import PorKilo from '../../ui/components/ProdutosEdit/Direita/PorQuilo.js';
+import Bebidas from '../../ui/components/ProdutosEdit/Esquerda/Bebidas.js';
 
 // Importação do componente Header, junto da estilização cardapio.css e responsivo.css
 import '../../ui/styles/Cardapio.css';
+import { Link } from 'react-router-dom';
 
 
 function Cardapio(){
@@ -62,7 +69,21 @@ function Cardapio(){
 
 
             <div className='card'>
-
+              <div className='formularioAdd'>
+                <form className='from-prod-add'>
+                  <input type="text" className='input-nome' placeholder='Nome'/>
+                  <select className='select-categoria'>
+                    {
+                      userDados.map((uDados, index)=>(
+                          <option className='options-categoria'>{uDados.categoria}</option>
+                      ))
+                    }
+                  </select>
+                  <span>R$</span>
+                  <input type="number" className='input-preco' placeholder='0,00'/>
+                  <button type='submit' className='btn-submit'>Salvar</button>
+                </form>
+              </div>
               <div className='esquerda'>
                 <div className='categoria-caixa'>
                   <div>
@@ -75,7 +96,7 @@ function Cardapio(){
                     <div className="body-detalhes-div3"></div>
                   </div>
                 </div>
-                <div>
+                <div className='lista-prod'>
                   <Salgados/>
                 </div>
               </div>
@@ -261,8 +282,20 @@ function Cardapio(){
                 </div>
               </div>
             </div>
+            <div className='caixa footer'>
+              <div className='links-footer'>
+                <Link className='link'>
+                  <img className='imgs' src={listaimg} alt='Lista de Pedidos' />
+                </Link>
+                <Link className='link'>
+                  <img className='imgs' src={compraimg} alt='Adicionar Pedido'/>
+                </Link>
+                <Link className='link'>
+                  <img className='imgs' src={cadastroimg} alt='Cadastrar Cliente'/>
+                </Link>
+              </div>
+            </div>
           </div>
-          {/* <div className='caixa footer'></div> */}
         </div>
       );
   }
