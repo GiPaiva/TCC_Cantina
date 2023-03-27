@@ -13,14 +13,16 @@ import PratosProntos from '../../ui/components/Produtos/Esquerda/PratosProntos.j
 import PorKilo from '../../ui/components/Produtos/Direita/PorQuilo.js';
 import Bebidas from '../../ui/components/Produtos/Esquerda/Bebidas.js';
 
-// Importação do componente Header, junto da estilização cardapio.css e responsivo.css
+// Importação do componente Header, junto da estilização cardapio.css e responsivo.css.
 import '../../ui/styles/Cardapio.css';
 
 
 function Cardapio(){
+  // Define dois estados iniciais: 'dados' é indefinido e 'carregado' é false.
   const [userDados, setUserDados] = useState([]);
   const [carregado, setCarregado] = useState(false);
 
+  // Define uma função assíncrona 'pegaTodosProdutos' que busca dados da API usando o fetch.
   async function pegaTodosProdutos() {
       let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
           method: 'GET',
@@ -31,12 +33,14 @@ function Cardapio(){
       });
       let data = await response.json();
       console.log(data);
+      // Atualiza o estado 'dados' com os dados da API recebidos e muda o estado 'carregado' para true.
       setUserDados(data);
       setCarregado(true);
   }
 
+  // Define um efeito que será executado uma vez, logo após a montagem do componente.
   useEffect(() => {
-      pegaTodosProdutos();
+      pegaTodosProdutos();// Executa a função 'pegaTodosProdutos' definida anteriormente.
   }, []);
 
   if (carregado) {
