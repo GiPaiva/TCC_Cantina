@@ -11,7 +11,7 @@ export default function Salgados() {
 
     useEffect( () => {
         const getDados = async()=>{
-        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,10 @@ export default function Salgados() {
                     {
                         userDados.map((uDados, index)=>(
                             <tr key={index}>
-                                <td className='col produto'>{uDados.nome}</td>
+                                <div className='col-area'>
+                                    <td className='col produto'>{uDados.nome}</td>
+                                    <td className='col texto'>{uDados.descricao}</td>
+                                </div>
                                 <td className='col produto-preco'>R$ {uDados.preco}</td>
                                 <td className='col btn'>
                                     <Link className='btn-edit' to={"/editProd" + uDados.nome} >Editar</Link>

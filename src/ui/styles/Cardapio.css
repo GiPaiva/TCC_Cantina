@@ -41,6 +41,8 @@
     width: max-content;
 }
 
+
+/*Detalhes dos Titulos/Categorias (Enmbelezamento)*/
 .body-detalhes{
     width: 100%;
     display: flex;
@@ -74,31 +76,45 @@
     width: 20%;
 }
 
-
+/*Produtos*/
 .lista{
     display: flex;
     justify-content: flex-end;
     padding: 0 1vw 0 1vw;
+    width: max-content;
 }
 .lista-produto{
     padding: 0 1vw 0 1vw;
+    width: max-content;
 }
-.produto,
-.produto-preco,
-.produto-direita{
+.col-area{
+    width: 25vw;
+    display: flex;
+    flex-direction: row;
+}
+.col-area-direita{
+    justify-content: flex-end;
+}
+.col{
     font-size: 2vw;
     color: rgb(255, 255, 255);
-}
-.produto-direita,
-.produto{
-    min-width: 20.5vw;
 }
 .produto-direita{
     text-align: end;
 }
+.texto{
+    font-size: 0.6vw;
+    max-width: 70%;
+    padding: 0px 10px;
+    color: #ffbb00;
+    display: flex;
+    align-items: center;
+}
+.textp-direita{
+    text-align: end;
+}
 
-
-/* Parte de Pratos Prontos e Por kilo */
+/* Parte de Pratos Prontos e Por Quilo */
 .meio-pratos{
     display: flex;
     justify-content: center;
@@ -140,7 +156,7 @@
     color: black;
     width: 15vw;
     height: 7vh;
-    font-size: 2vw;
+    font-size: 1.5vw;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
 }
@@ -162,9 +178,13 @@
     .esquerda .categoria-caixa div .categoria-titulo{
         font-size: 4vw;
     }
-    .lista-produto tbody td,
-    .lista tbody td{
-        font-size: 3vw;
+    
+    .col{
+        font-size: 2vw;
+        text-align: center;
+    }
+    .texto{
+        font-size: 1vw;
     }
 }
 
@@ -222,20 +242,22 @@
     }
 
     
-    .direita .categoria-caixa div .categoria-titulo{
-        font-size: 6vw;
-    }
+    .direita .categoria-caixa div .categoria-titulo,
     .esquerda .categoria-caixa div .categoria-titulo{
         font-size: 6vw;
     }
 
-    .lista-produto tbody td,
-    .lista tbody td{
-        font-size: 4vw;
+
+    .col-area{
+        width: 60vw;
     }
-    .produto-direita,
-    .produto{
-        min-width: 35vw;
+    .col{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .texto{
+        font-size: 2vw;
+        max-width: 70%;
     }
     .pratos{
         font-size: 8vw;

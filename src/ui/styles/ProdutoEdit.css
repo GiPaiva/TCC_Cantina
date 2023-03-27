@@ -12,12 +12,13 @@
     justify-content: center;
     align-items: center;
     height: 5vh;
-    width: 4vw;
+    width: 5vw;
     margin: 0 10px 0 10px;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 20px;
     color: #000;
     transition: 0.5s all ease-in-out;
+    padding: 5px;
 }
 .btn-edit{
     background-color: #FFB500;
@@ -26,15 +27,15 @@
     background-color: #ff0000;
 }
 
-.btn-edit:hover{
-    transform: scale(1.1);
-}
+.btn-edit:hover,
 .btn-delet:hover{
     transform: scale(1.1);
 }
 .lista-prod{
     width: 40vw;
 }
+
+
 
 .formularioAdd{
     display: flex;
@@ -50,25 +51,37 @@
     margin: 0 1vw 0 1vw;
     padding: 5px;
     background-color: rgb(255, 255, 255);
-    width: 77%;
     height: 5vh;
     border-radius: 20px;
 }
-.input-nome{
-    border-radius: 20px;
+
+.input-nome,
+.input-descricao,
+.input-preco{
     border: 1px solid #c5c5c5;
     padding: 2px 10px;
     font-size: 30px;
-    min-width: 10vw;
-    margin-right: 3vw;
+}
+
+.input-descricao{
+    border-radius: 0px 20px 20px 0px;
+    max-width: 12vw;
+    margin-right: 1vw;
+}
+.input-nome{
+    border-radius: 20px 0px 0px 20px;
+    max-width: 12vw;
 }
 .input-preco{
     border-radius: 20px;
-    border: 1px solid #c5c5c5;
-    padding: 2px 10px;
-    font-size: 30px;
     width: 5vw;
 }
+.input-nome::placeholder,
+.input-descricao::placeholder,
+.input-preco::placeholder{
+    font-size: 25px;
+}
+
 .select-categoria{
     display: flex;
     justify-content: center;
@@ -81,18 +94,18 @@
     background-color: #fff;
 }
 span{
-    margin-left: 3vw;
+    margin-left: 1vw;
     font-size: 30px;
 }
 
 .btn-submit{
     background-color: #ffbb00;
     height: 100%;
-    width: 4vw;
+    width: 6vw;
     border-radius: 20px;
     font-size: 25px;
     border: none;
-    margin-left: 5vw;
+    margin-left: 0.6vw;
 }
 
 .footer{

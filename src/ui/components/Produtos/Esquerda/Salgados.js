@@ -31,7 +31,10 @@ export default function Salgados() {
                     {
                         userDados.map((uDados, index)=>(
                             <tr key={index}>
-                                <td className='col produto'>{uDados.nome}</td>
+                                <div className='col-area'>
+                                    <td className='col produto'>{uDados.nome}</td>
+                                    <td className='col texto'>{uDados.descricao}</td>
+                                </div>
                                 <td className='col produto-preco'>R$ {uDados.preco}</td>
                             </tr>
                         ))
