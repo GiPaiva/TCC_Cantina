@@ -51,13 +51,15 @@
     margin: 0 1vw 0 1vw;
     padding: 5px;
     background-color: rgb(255, 255, 255);
+    width: 97%;
     height: 5vh;
     border-radius: 20px;
 }
 
 .input-nome,
 .input-descricao,
-.input-preco{
+.input-preco,
+.input-datalist{
     border: 1px solid #c5c5c5;
     padding: 2px 10px;
     font-size: 30px;
@@ -76,20 +78,17 @@
     border-radius: 20px;
     width: 5vw;
 }
+.input-datalist{
+    border-radius: 20px;
+    width: 10vw;
+}
 .input-nome::placeholder,
 .input-descricao::placeholder,
-.input-preco::placeholder{
+.input-preco::placeholder,
+.input-datalist{
     font-size: 25px;
 }
 
-.select-categoria{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    border-radius: 20px;
-    font-size: 25px;
-}
 .options-categoria{
     background-color: #fff;
 }
@@ -103,7 +102,7 @@ span{
     height: 100%;
     width: 6vw;
     border-radius: 20px;
-    font-size: 25px;
+    font-size: 20px;
     border: none;
     margin-left: 0.6vw;
 }

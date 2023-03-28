@@ -27,7 +27,12 @@ import { Link } from 'react-router-dom';
 function Cardapio(){
   const [userDados, setUserDados] = useState([]);
   const [carregado, setCarregado] = useState(false);
-  const [formvalue, setFormvalue] = useState({nome:'', descricao:'', categoria:'', preco:''});
+  const [formvalue, setFormvalue] = useState({
+    nome:'', 
+    preco: 0,
+    descricao:'', 
+    categoria:'', 
+  });
 
   async function pegaTodosProdutos() {
       let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
@@ -48,12 +53,22 @@ function Cardapio(){
   }, []);
 
   const handleInput=(e)=>{
-    setFormvalue({...formvalue,[e.target.nome]:e.target.value});
+    const {name, value}= e.target;
+    setFormvalue({...formvalue,[name]:value});
   }
-  const handleSubmit =async(e)=>{
+  const handleSubmit = async(e)=>{
     e.preventDefault();
-    console.log(formvalue);
+    const allInputsValue={ nome:formvalue.nome, descricao:formvalue.descricao, categoria:formvalue.categoria, preco:formvalue.preco};
+    console.log(allInputsValue);
+    
 
+  //   let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+  //     method: 'POST',
+  //     headers: {
+  //         'Content-Type': 'application/json'
+  //     },
+  //     mode: 'cors'
+  // });
   }
 
   if (carregado) {
@@ -80,18 +95,19 @@ function Cardapio(){
 
             <div className='card'>
               <div className='formularioAdd'>
-                <form className='from-prod-add' onSubmit={handleSubmit}>
-                  <input type="text" className='input-nome' name='nome' value={formvalue.nome} onChange={handleInput} placeholder='Nome'/>
-                  <input type="text" className='input-descricao' name='descricao' value={formvalue.descricao} onChange={handleInput} placeholder='Descrição'/>
-                  <select className='select-categoria' value={formvalue.categoria} onChange={handleInput}>
+                <form className='from-prod-add'  onSubmit={ handleSubmit}>
+                  <input type="text" className='input-nome' name='nome' value={formvalue.nome} onChange={ handleInput} placeholder='nome...' pattern='^(?=*[a-z])' required/>
+                  <input type="text" className='input-descricao' name='descricao' value={formvalue.descricao} onChange={ handleInput} placeholder='descricao...' />
+                  <input className='input-datalist' list='categorias' name='categoria' value={formvalue.categoria} onChange={ handleInput} placeholder='categoria...' required/>
+                  <datalist id='categorias'>
                     {
-                      userDados.map((uDados, index)=>(
-                          <option className='options-categoria' id='categoria' value={uDados.categoria}>{uDados.categoria}</option>
+                      userDados.map((uDados)=>(
+                          <option className='options-categoria' id='categoria' name='categoria'>{uDados.categoria}</option>
                       ))
                     }
-                  </select>
+                  </datalist>
                   <span>R$</span>
-                  <input type="number" className='input-preco' name='preco' value={formvalue.preco} onChange={handleInput} placeholder='0,00'/>
+                  <input type="number" className='input-preco' name='preco' value={formvalue.preco} onChange={ handleInput} placeholder='0.00'/>
                   <button type='submit' className='btn-submit'>Salvar</button>
                 </form>
               </div>

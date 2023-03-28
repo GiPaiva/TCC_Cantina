@@ -99,6 +99,9 @@
     font-size: 2vw;
     color: rgb(255, 255, 255);
 }
+.col::first-letter{
+    text-transform: uppercase;
+}
 .produto-direita{
     text-align: end;
 }
