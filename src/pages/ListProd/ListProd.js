@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import listaimg from '../../ui/imgs/lista.png';
 import cadastroimg from '../../ui/imgs/cadastro.png';
 import compraimg from '../../ui/imgs/compra.png';
+import cadastrofun from '../../ui/imgs/cf.png';
 
 //Componentes dos Produtos
 import Salgados from '../../ui/components/ProdutosEdit/Esquerda/Salgados.js';
@@ -22,11 +23,14 @@ import Bebidas from '../../ui/components/ProdutosEdit/Esquerda/Bebidas.js';
 // Importação do componente Header, junto da estilização cardapio.css e responsivo.css
 import '../../ui/styles/Cardapio.css';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 
 function Cardapio(){
   const [userDados, setUserDados] = useState([]);
   const [carregado, setCarregado] = useState(false);
+  const {id} = useParams();
+  console.log(id);
   const [formvalue, setFormvalue] = useState({
     nome:'', 
     preco: 0,
@@ -55,20 +59,22 @@ function Cardapio(){
   const handleInput=(e)=>{
     const {name, value}= e.target;
     setFormvalue({...formvalue,[name]:value});
+    
   }
+  
   const handleSubmit = async(e)=>{
     e.preventDefault();
-    const allInputsValue={ nome:formvalue.nome, descricao:formvalue.descricao, categoria:formvalue.categoria, preco:formvalue.preco};
+    const allInputsValue={ nome:formvalue.nome.toLowerCase(), descricao:formvalue.descricao.toLowerCase(), categoria:formvalue.categoria.toLowerCase(), preco:formvalue.preco};
     console.log(allInputsValue);
     
-
-  //   let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
-  //     method: 'POST',
-  //     headers: {
-  //         'Content-Type': 'application/json'
-  //     },
-  //     mode: 'cors'
-  // });
+    
+    // let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+    //   method: 'POST',
+    //   headers: {
+    //       'Content-Type': 'application/json'
+    //   },
+    //   mode: 'cors'
+    // });
   }
 
   if (carregado) {
@@ -95,10 +101,10 @@ function Cardapio(){
 
             <div className='card'>
               <div className='formularioAdd'>
-                <form className='from-prod-add'  onSubmit={ handleSubmit}>
+                <form className='from-prod-add' id='form'  onSubmit={ handleSubmit}>
                   <input type="text" className='input-nome' name='nome' value={formvalue.nome} onChange={ handleInput} placeholder='nome...' pattern='^(?=*[a-z])' required/>
                   <input type="text" className='input-descricao' name='descricao' value={formvalue.descricao} onChange={ handleInput} placeholder='descricao...' />
-                  <input className='input-datalist' list='categorias' name='categoria' value={formvalue.categoria} onChange={ handleInput} placeholder='categoria...' required/>
+                  <input className='input-datalist' list='categorias' name='categoria' value={formvalue.categoria} onChange={ handleInput} placeholder='categorias...' required/>
                   <datalist id='categorias'>
                     {
                       userDados.map((uDados)=>(
@@ -319,6 +325,9 @@ function Cardapio(){
                 </Link>
                 <Link className='link'>
                   <img className='imgs' src={cadastroimg} alt='Cadastrar Cliente'/>
+                </Link>
+                <Link className='link'>
+                  <img className='imgs' src={cadastrofun} alt='Cadastrar Funcionario'/>
                 </Link>
               </div>
             </div>

@@ -16,7 +16,6 @@ export default function Salgados() {
             mode: 'cors'
         });
         const resDados= await reqDados.json();
-        console.log(resDados);
         setUserDados(resDados);
         setCarregado(true);
         }
