@@ -38,6 +38,7 @@ function Cardapio(){
     categoria:'', 
   });
 
+
   async function pegaTodosProdutos() {
       let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
           method: 'GET',
@@ -59,12 +60,16 @@ function Cardapio(){
   const handleInput=(e)=>{
     const {name, value}= e.target;
     setFormvalue({...formvalue,[name]:value});
-    
   }
   
   const handleSubmit = async(e)=>{
     e.preventDefault();
-    const allInputsValue={ nome:formvalue.nome.toLowerCase(), descricao:formvalue.descricao.toLowerCase(), categoria:formvalue.categoria.toLowerCase(), preco:formvalue.preco};
+    const allInputsValue = {
+      nome: formvalue.nome.toLowerCase(),
+      descricao: formvalue.descricao.toLowerCase(),
+      categoria: formvalue.categoria.toLowerCase(),
+      preco: formvalue.preco
+    };
     console.log(allInputsValue);
     
     
@@ -117,6 +122,8 @@ function Cardapio(){
                   <button type='submit' className='btn-submit'>Salvar</button>
                 </form>
               </div>
+
+
               <div className='esquerda'>
                 <div className='categoria-caixa'>
                   <div>

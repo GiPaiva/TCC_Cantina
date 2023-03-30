@@ -24,6 +24,10 @@ export default function Salgados() {
         }
         getDados();
     }, []);
+
+    const handleDelet = async(nome)=>{
+        
+    }
   
     if (carregado) {
         return (

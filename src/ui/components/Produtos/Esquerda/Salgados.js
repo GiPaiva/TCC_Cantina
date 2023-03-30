@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import config from "../../Config/config";
 import '../../../styles/Cardapio.css';
 
 
@@ -9,7 +10,7 @@ export default function Salgados() {
 
     useEffect( () => {
         const getDados = async()=>{
-        const reqDados = await fetch('https://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        const reqDados = await fetch( config + '/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
