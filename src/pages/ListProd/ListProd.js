@@ -72,8 +72,8 @@ function Cardapio(){
     };
     console.log(allInputsValue);
     
-    
-    // let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+    //precisa do token
+    // let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos', {
     //   method: 'POST',
     //   headers: {
     //       'Content-Type': 'application/json'
