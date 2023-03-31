@@ -20,7 +20,7 @@ import PratosProntos from '../../ui/components/ProdutosEdit/Esquerda/PratosPront
 import PorKilo from '../../ui/components/ProdutosEdit/Direita/PorQuilo.js';
 import Bebidas from '../../ui/components/ProdutosEdit/Esquerda/Bebidas.js';
 
-// Importação do componente Header, junto da estilização cardapio.css e responsivo.css
+// Importação da estilização cardapio.css
 import '../../ui/styles/Cardapio.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
