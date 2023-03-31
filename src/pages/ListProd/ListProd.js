@@ -20,7 +20,7 @@ import PratosProntos from '../../ui/components/ProdutosEdit/Esquerda/PratosPront
 import PorKilo from '../../ui/components/ProdutosEdit/Direita/PorQuilo.js';
 import Bebidas from '../../ui/components/ProdutosEdit/Esquerda/Bebidas.js';
 
-// Importação do componente Header, junto da estilização cardapio.css e responsivo.css
+// Importação da estilização cardapio.css
 import '../../ui/styles/Cardapio.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -39,23 +39,26 @@ function Cardapio(){
   });
 
 
+  // Define uma função assíncrona 'pegaTodosProdutos' que busca dados da API usando o fetch.
   async function pegaTodosProdutos() {
-      let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          mode: 'cors'
-      });
-      let data = await response.json();
-      console.log(data);
-      setUserDados(data);
-      setCarregado(true);
-  }
+    let response = await fetch('https://api-cantina-production.up.railway.app/api/produtos?key=1363dc7316d70ecf0803a4bd24ac15ab', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+    });
+    let data = await response.json();
+    console.log(data);
+    // Atualiza o estado 'dados' com os dados da API recebidos e muda o estado 'carregado' para true.
+    setDados(data);
+    setCarregado(true);
+}
 
-  useEffect(() => {
-      pegaTodosProdutos();
-  }, []);
+// Define um efeito que será executado uma vez, logo após a montagem do componente.
+useEffect(() => {
+    pegaTodosProdutos();// Executa a função 'pegaTodosProdutos' definida anteriormente.
+}, []);
 
   const handleInput=(e)=>{
     const {name, value}= e.target;

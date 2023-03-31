@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-
+// Componente dos Produtos
 import Salgados from '../../ui/components/Produtos/Esquerda/Salgados.js';
 import Lanches from '../../ui/components/Produtos/Direita/Lanches.js';
 import Pasteis from '../../ui/components/Produtos/Esquerda/Pasteis.js';
@@ -15,7 +15,6 @@ import Bebidas from '../../ui/components/Produtos/Esquerda/Bebidas.js';
 
 // Importação do componente Header, junto da estilização cardapio.css e responsivo.css.
 import '../../ui/styles/Cardapio.css';
-
 
 function Cardapio(){
   // Define dois estados iniciais: 'dados' é indefinido e 'carregado' é false.
@@ -43,6 +42,7 @@ function Cardapio(){
       pegaTodosProdutos();// Executa a função 'pegaTodosProdutos' definida anteriormente.
   }, []);
 
+  // O código retorna o que será renderizado no componente, assim que 'dados' for atualizado e 'carregado' forem alterado para true.
   if (carregado) {
       return (
         <div>
