@@ -60,19 +60,26 @@ useEffect(() => {
     pegaTodosProdutos();// Executa a função 'pegaTodosProdutos' definida anteriormente.
 }, []);
 
+  // Função responsável por atualizar um objeto
   const handleInput=(e)=>{
+    // Com o acionamento do formvalue quando há alteração do campo, ele captura o evento e. e desestrutura 
+    // o objeto e.target para acessar o name e value, após atualiza o estado com o setFormvalue
     const {name, value}= e.target;
     setFormvalue({...formvalue,[name]:value});
   }
   
+  // Função responsável por coletar todos valores do formulário
   const handleSubmit = async(e)=>{
+    // Quando o evento e. é ativo ele evita com o e.preventDefault o padrão de envio das informações do navegador  
     e.preventDefault();
+    // Cria um objeto que contém os itens preenchidos pelo usuário chamado allInputsValue
     const allInputsValue = {
       nome: formvalue.nome.toLowerCase(),
       descricao: formvalue.descricao.toLowerCase(),
       categoria: formvalue.categoria.toLowerCase(),
       preco: formvalue.preco
     };
+    // Imprime as informações no console do mesmo objeto preenchido
     console.log(allInputsValue);
     
     //precisa do token
