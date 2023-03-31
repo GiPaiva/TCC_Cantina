@@ -51,7 +51,7 @@ function Cardapio(){
     let data = await response.json();
     console.log(data);
     // Atualiza o estado 'dados' com os dados da API recebidos e muda o estado 'carregado' para true.
-    setDados(data);
+    setUserDados(data);
     setCarregado(true);
 }
 
