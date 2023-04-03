@@ -1,6 +1,6 @@
 .btn{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0 10px 0 10px;
     height: 6vh;
@@ -12,10 +12,10 @@
     justify-content: center;
     align-items: center;
     height: 5vh;
-    width: 5vw;
+    width: 7vw;
     margin: 0 10px 0 10px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 1.5vw;
     color: #000;
     transition: 0.5s all ease-in-out;
     padding: 5px;
@@ -108,7 +108,6 @@ span{
     margin-left: 0.6vw;
     cursor: pointer;
 }
-
 .footer{
     display: flex;
     justify-content: flex-end;
@@ -136,12 +135,60 @@ span{
     border-radius: 20px;
     transition: 0.5s all ease-in-out;
 }
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0px;
+    color: #fff;
+    background-color: #ffbb00;
+    padding: 5px;
+    border-radius: 20px;
+    transition: 0.5s all ease-in-out;
+    width: 4vw;
+    height: 7vh;
+}
 .link:hover{
     transform: scale(1.1);
 }
 
 .imgs{
-    width: 4vw;
-    height: 7vh;
+    width: 100%;
 }
 
+@media(max-width: 900px){
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        
+    }
+    .links-footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        /* background-color: #000000; */
+        height: fit-content;
+        border-radius: 15px 0 0 15px;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+    }
+    .link{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 20px 0px;
+        color: #fff;
+        background-color: #ffbb00;
+        padding: 5px;
+        border-radius: 20px;
+        transition: 0.5s all ease-in-out;
+    }
+    .imgs{
+        width: 100%;
+    }
+}
