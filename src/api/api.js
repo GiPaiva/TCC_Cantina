@@ -22,48 +22,8 @@ export const createProduct = async (productData) => {
 };
 
 
-
-
-// import axios from "axios";
-
-// const url = "https://api-cantina-production.up.railway.app"
-
-// export function getUsers() {
-//   axios.get(url)
-//     .then(response => {
-//       const data = response.data
-
-//       renderApiResult.textContent = JSON.stringify(data)
-//     })
-//     .catch(error => console.log(error))
-// }
-
-// export function fetchData() {
-//   return axios.get("https://api.example.com/datahttps://api-cantina-production.up.railway.app/api/produtos/salgados?key=1363dc7316d70ecf0803a4bd24ac15ab")
-//     .then(response => {
-//       return response.data;
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// }
-
-
-// export function getUser() {
-//   axios.get(`${url}/1`)
-//     .then(response => {
-//       const data = response.data
-
-//       userCategoria.textContent= data.categoria
-//       userNome.textContent = data.nome
-//       userDescricao.textContent = data.decricao
-//       userPreco.textContent = data.preco
-//     })
-//     .catch(error => console.log(error))
-// }
-
 // export function addNewUser(newUser) {
-
+//
 //   axios.post(url, newUser)
 //     .then(response => {
 //       alert(JSON.stringify(response.data))
@@ -71,7 +31,7 @@ export const createProduct = async (productData) => {
 //     })
 //     .catch(error => console.error(error));
 // }
-
+//
 // export function updateUser(user, id) {
 //   axios.put(`${url}/${id}`, user)
 //     .then(response => {
@@ -80,7 +40,7 @@ export const createProduct = async (productData) => {
 //     })
 //     .catch(error => console.error(error));
 // }
-
+//
 // export function deleteUser(id) {
 //   axios.delete(`${url}/${id}`)
 //     .then(response => {
@@ -89,7 +49,7 @@ export const createProduct = async (productData) => {
 //     })
 //     .catch(error => console.error(error));
 // }
-
+//
 //calls
 // getUsers()
 // getUser()
