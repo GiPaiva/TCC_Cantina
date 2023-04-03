@@ -40,6 +40,9 @@
     color: #FFB500;
     width: max-content;
 }
+.categoria-titulo::first-letter{
+    text-transform: uppercase;
+}
 
 
 /*Detalhes dos Titulos/Categorias (Enmbelezamento)*/
@@ -162,6 +165,9 @@
     font-size: 1.5vw;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
+}
+.page::first-letter{
+    text-transform: uppercase;
 }
 .page:hover{
     box-shadow:
