@@ -86,10 +86,10 @@
     padding: 0 1vw 0 1vw;
     width: max-content;
 }
-.lista-produto{
+/* .lista-produto{
     padding: 0 1vw 0 1vw;
     width: max-content;
-}
+} */
 .col-area{
     width: 25vw;
     display: flex;
@@ -281,5 +281,9 @@
     
     .prato{
         font-size: 10vw;
+    }
+
+    .lista-produto{
+        width: max-content;
     }
 }

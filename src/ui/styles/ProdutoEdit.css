@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 5vh;
-    width: 7vw;
+    width: 6vw;
     margin: 0 10px 0 10px;
     border-radius: 10px;
     font-size: 1.5vw;
@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     justify-self: center;
-    margin: 0 1vw 0 1vw;
+    margin: 0 1vw 0 0.5vw;
     padding: 5px;
     background-color: rgb(255, 255, 255);
     width: 97%;
@@ -77,7 +77,7 @@
 }
 .input-preco{
     border-radius: 20px;
-    width: 5vw;
+    width: 4vw;
 }
 .input-datalist{
     border-radius: 20px;
@@ -86,15 +86,16 @@
 .input-nome::placeholder,
 .input-descricao::placeholder,
 .input-preco::placeholder,
-.input-datalist{
+.input-datalist::placeholder{
     font-size: 100%;
+    width: 100%;
 }
 
 .options-categoria{
     background-color: #fff;
 }
 span{
-    margin-left: 1vw;
+    margin: 0 0.5vw 0;
     font-size: 100%;
 }
 
@@ -103,7 +104,7 @@ span{
     height: 100%;
     width: 4vw;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 0.8vw;
     border: none;
     margin-left: 0.6vw;
     cursor: pointer;
@@ -127,23 +128,12 @@ span{
 .link{
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 20px 0px;
-    color: #fff;
-    background-color: #ffbb00;
-    padding: 5px;
-    border-radius: 20px;
-    transition: 0.5s all ease-in-out;
-}
-.link{
-    display: flex;
-    align-items: center;
     justify-content: space-around;
     margin: 20px 0px;
     color: #fff;
     background-color: #ffbb00;
     padding: 5px;
-    border-radius: 20px;
+    border-radius: 10px;
     transition: 0.5s all ease-in-out;
     width: 4vw;
     height: 7vh;
@@ -163,16 +153,14 @@ span{
         justify-content: center;
         align-items: center;
         position: absolute;
-        
+
     }
     .links-footer{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        /* background-color: #000000; */
         height: fit-content;
-        border-radius: 15px 0 0 15px;
         position: fixed;
         width: 100%;
         bottom: 0px;
@@ -185,10 +173,78 @@ span{
         color: #fff;
         background-color: #ffbb00;
         padding: 5px;
-        border-radius: 20px;
+        border-radius: 10px;
         transition: 0.5s all ease-in-out;
+        width: 5vw;
+        height: 7vh;
     }
     .imgs{
         width: 100%;
+    }
+    .btn-edit,
+    .btn-delet{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+        width: 8vw;
+        margin: 0 10px 0 10px;
+        border-radius: 10px;
+        font-size: 2vw;
+        color: #000;
+        transition: 0.5s all ease-in-out;
+        padding: 5px;
+    }
+    .btn-submit{
+        background-color: #ffbb00;
+        height: 100%;
+        width: 10vw;
+        border-radius: 20px;
+        font-size: 2vw;
+        border: none;
+        margin-left: 0.6vw;
+        cursor: pointer;
+    }
+    .formularioAdd{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0 20px 0;
+    }
+    .from-prod-add{
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        padding: 5px;
+        background-color: rgb(255, 255, 255);
+        width: 90vw;
+        height: 5vh;
+        border-radius: 20px;
+    }
+    .input-preco{
+        width: 7vw;
+    }
+    .input-descricao{
+        max-width: 18vw;
+    }
+    .input-nome,
+    .input-datalist,
+    .input-descricao{
+        max-width: 23vw;
+    }
+    .input-nome::placeholder,
+    .input-descricao::placeholder,
+    .input-preco::placeholder,
+    .input-datalist{
+        font-size: 3vw;
+        width: 100%;
+    }   
+}
+@media(max-width: 450px){
+    .input-nome,
+    .input-datalist,
+    .input-descricao{
+        max-width: 20vw;
     }
 }
