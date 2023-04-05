@@ -5,13 +5,13 @@ import { login } from '../../../api/api';
 
 
 function Login() {
-  const { username, setUsername } = useState('');
-  const { password, setPassword } = useState('');
+  const [username, setUsername]  = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const accessToken = await login(username, password);
-    console.log('Access token:', accessToken);
+    const token = await login(username, password);
+    console.log('Access token:', token);
   };
 
   return (
@@ -26,14 +26,24 @@ function Login() {
               <form className="form-login" onSubmit={handleLogin}>
 
                 {/* Inputs e botão que usamos para fazer a inserção e entrega das informações pelos campos respectivos */}
-                <input className="input" type="text"
-                  name="username" id="username" placeholder="Username"
-                  value={username} onChange={(event) => setUsername(event.target.value)}
+                <input 
+                  type="text"
+                  className="input" 
+                  placeholder="Username"
+                  name="username" 
+                  id="username" 
+                  value={username} 
+                  onChange={(e) => setUsername(e.target.value)}
                 />
                 
-                <input className="input" type="password"
-                  name="senha" id="senha" placeholder="•••••••"
-                  value={password} onChange={(event) => setPassword(event.target.value)}
+                <input 
+                  className="input" 
+                  type="password"
+                  placeholder="•••••••"
+                  name="senha" 
+                  id="senha"
+                  value={password} 
+                  onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <button className="btn-login" type="submit">Entrar</button>

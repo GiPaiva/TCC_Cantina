@@ -17,7 +17,6 @@ function Cardapio(){
           <Produtos/>
         </div>
       </div>
-      {/* <div className='caixa footer'></div> */}
     </div>
   );
 }

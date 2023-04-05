@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getProducts } from '../../../api/api';
+import { getProducts} from '../../../api/api';
 import '../../styles/Cardapio.css';
 
 export default function Produtos() {
@@ -8,7 +8,7 @@ export default function Produtos() {
 
   useEffect(() => {
     const fetchData = async () => {
-        const data = await getProducts();
+      const data = await getProducts();
         setProducts(data);
         setCarregado(true);
     };

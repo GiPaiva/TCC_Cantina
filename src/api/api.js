@@ -2,11 +2,16 @@ import axios from 'axios';
 
 
 const API_BASE_URL = 'https://api-cantina-production.up.railway.app/api';
-const key = '?key=1363dc7316d70ecf0803a4bd24ac15ab';
+
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/produtos${key}`);
+    const response = await axios.get(`${API_BASE_URL}/produtos`, {
+      params:{
+        key: '1363dc7316d70ecf0803a4bd24ac15ab'
+      }
+    });
+    console.log(response);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -15,7 +20,7 @@ export const getProducts = async () => {
 
 export const createProduct = async (productData) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/products`, productData);
+    const response = await axios.post(`${API_BASE_URL}/produtos`, productData);
     return response.data;
   } catch (error) {
     console.error(error);

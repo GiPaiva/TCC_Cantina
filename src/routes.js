@@ -16,8 +16,8 @@ export default function Rotas() {
                 {/* Logo se o atributo path houver apenas a barra seguirá para o cardápio, se houver o nome da respectiva após seguirá para a mesma */}
                 <Route path='/' index element={<Cardapio />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/cadastro' element={<Cadastro />} />
                 <Route path='/listaproduto' element={<ListaProduto />} />
+                <Route path='/cadastro' element={<Cadastro />} />
             </Routes>
         </BrowserRouter>
     )
