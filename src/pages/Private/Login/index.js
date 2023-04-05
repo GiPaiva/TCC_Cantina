@@ -2,16 +2,23 @@ import React, { useState } from 'react';
 // Importamos a estilização login.css
 import '../../../ui/styles/Login.css';
 import { login } from '../../../api/api';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
   const [username, setUsername]  = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    const token = await login(username, password);
-    console.log('Access token:', token);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/login', { email, password });
+      const { token } = response.data;
+      localStorage.setItem('token', token); // save token to local storage
+      // redirect to restricted page
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
