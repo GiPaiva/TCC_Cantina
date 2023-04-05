@@ -1,6 +1,7 @@
+//Imports de Atributos
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { createProduct } from '../../../api/api';
+import { Link } from 'react-router-dom';
+import { getRestrictedData } from '../../../api/api';
 
 //Imgs
 import listaimg from '../../../ui/imgs/lista.png';
@@ -18,42 +19,53 @@ import '../../../ui/styles/ProdutoEdit.css';
 
 
 function Cardapio(){
+  const [restrictedData, setRestrictedData] = useState([]);
 
-      return (
-        <div>
-          <div className='container view'>
-            {/* Botões laterias que facilitam a procura por itens do cardápio */}
-            <div className='caixa nav'>
-              <div className='links navbar'>
-                <Nav/>
-              </div>
-            </div>
+  useEffect(() => {
+    const fetchRestrictedData = async () => {
+      const accessToken = localStorage.getItem('accessToken'); // Get the access token from localStorage
+      const data = await getRestrictedData(accessToken);
+      setRestrictedData(data);
+    };
+    fetchRestrictedData();
+  }, []);
 
-            <div className='card'>
-              <div className='formularioAdd'>
-                <FormularioAdd/>
-              </div>
-              <ProdutosEdit/>
-            </div>
-            <div className='caixa footer'>
-              <div className='links-footer'>
-                <Link className='link' >
-                  <img className='imgs' src={listaimg} alt='Lista de Pedidos' />
-                </Link>
-                <Link className='link'>
-                  <img className='imgs' src={compraimg} alt='Adicionar Pedido'/>
-                </Link>
-                <Link className='link'>
-                  <img className='imgs' src={cadastroimg} alt='Cadastrar Cliente'/>
-                </Link>
-                <Link className='link'>
-                  <img className='imgs' src={cadastrofun} alt='Cadastrar Funcionario'/>
-                </Link>
-              </div>
-            </div>
+
+  return (
+    <div>
+      <div className='container view'>
+        {/* Botões laterias que facilitam a procura por itens do cardápio */}
+        <div className='caixa nav'>
+          <div className='links navbar'>
+            <Nav/>
           </div>
         </div>
-      );
+
+        <div className='card'>
+          <div className='formularioAdd'>
+            <FormularioAdd/>
+          </div>
+          <ProdutosEdit/>
+        </div>
+        <div className='caixa footer'>
+          <div className='links-footer'>
+            <Link className='link' >
+              <img className='imgs' src={listaimg} alt='Lista de Pedidos' />
+            </Link>
+            <Link className='link'>
+              <img className='imgs' src={compraimg} alt='Adicionar Pedido'/>
+            </Link>
+            <Link className='link'>
+              <img className='imgs' src={cadastroimg} alt='Cadastrar Cliente'/>
+            </Link>
+            <Link className='link'>
+              <img className='imgs' src={cadastrofun} alt='Cadastrar Funcionario'/>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Cardapio;

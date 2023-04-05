@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const API_BASE_URL = 'https://api-cantina-production.up.railway.app/api';
 const key = '?key=1363dc7316d70ecf0803a4bd24ac15ab';
 
@@ -21,35 +22,29 @@ export const createProduct = async (productData) => {
   }
 };
 
+export const login = async (username, password) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/login`, {
+      username,
+      password,
+    });
+    return response.data.access_token;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-// export function addNewUser(newUser) {
-//
-//   axios.post(url, newUser)
-//     .then(response => {
-//       alert(JSON.stringify(response.data))
-//       getUsers()
-//     })
-//     .catch(error => console.error(error));
-// }
-//
-// export function updateUser(user, id) {
-//   axios.put(`${url}/${id}`, user)
-//     .then(response => {
-//       alert(JSON.stringify(response.data))
-//       getUsers()
-//     })
-//     .catch(error => console.error(error));
-// }
-//
-// export function deleteUser(id) {
-//   axios.delete(`${url}/${id}`)
-//     .then(response => {
-//       alert(JSON.stringify(response.data))
-//       getUsers()
-//     })
-//     .catch(error => console.error(error));
-// }
-//
-//calls
-// getUsers()
-// getUser()
+export const getRestrictedData = async (token) => {
+  try {
+    const response = await axios.get('/listaproduto', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+

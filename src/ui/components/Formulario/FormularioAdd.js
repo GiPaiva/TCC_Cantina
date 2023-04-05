@@ -33,15 +33,6 @@ export default function FormularioAdd(){
             preco: formvalue.preco
         };
         console.log(allInputsValue);
-    
-        //precisa do token
-        // let resp = await fetch('https://api-cantina-production.up.railway.app/api/produtos', {
-        //   method: 'POST',
-        //   headers: {
-        //       'Content-Type': 'application/json'
-        //   },
-        //   mode: 'cors'
-        // });
     }
     
     return (
