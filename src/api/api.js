@@ -18,6 +18,19 @@ export const getProducts = async () => {
   }
 };
 
+export const getProductsByCategory = async (categoria) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/produtos/${categoria}`, {
+      params:{
+        key: '1363dc7316d70ecf0803a4bd24ac15ab'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const createProduct = async (productData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/produtos`, productData);

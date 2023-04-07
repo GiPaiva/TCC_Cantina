@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 // Importamos a estilização login.css
-import '../../../ui/styles/Login.css';
-import { login } from '../../../api/api';
-import { useNavigate } from 'react-router-dom';
+import '../../ui/styles/Login.css';
+import axios from 'axios';
 
 
 function Login() {
@@ -12,7 +11,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/login', { email, password });
+      const response = await axios.post('/api/login', { username, password });
       const { token } = response.data;
       localStorage.setItem('token', token); // save token to local storage
       // redirect to restricted page
@@ -30,7 +29,7 @@ function Login() {
           <p className="titulo-login">Login</p>
             <div>
               {/* Formulário onde há a inserção das informações pelos inputs */}
-              <form className="form-login" onSubmit={handleLogin}>
+              <form className="form-login" onSubmit={handleSubmit}>
 
                 {/* Inputs e botão que usamos para fazer a inserção e entrega das informações pelos campos respectivos */}
                 <input 

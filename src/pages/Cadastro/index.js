@@ -1,4 +1,4 @@
-import '../../../ui/styles/Cadastro.css';
+import '../../ui/styles/Cadastro.css';
 
 function Cadastro(){
     return (

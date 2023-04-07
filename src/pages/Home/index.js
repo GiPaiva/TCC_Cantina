@@ -1,24 +1,9 @@
-import Produtos from "../../ui/components/Produtos/Produtos"
-import Nav from "../../ui/components/Nav/Nav";
+import React from "react"
 
-// Importação da estilização cardapio.css.
-import '../../ui/styles/Cardapio.css';
-
-
-function Cardapio(){
-  return (
-    <div>
-      <div className='container view'>
-        {/* Botões laterias que facilitam a procura por itens do cardápio */}
-        <div className='caixa nav'>
-          <Nav/>
+export default function Home() {
+    return (
+        <div>
+            <h1>Olá Bem Vindo ao Cantina Senai</h1>
         </div>
-        <div className='card'>
-          <Produtos/>
-        </div>
-      </div>
-    </div>
-  );
+    )
 }
-
-export default Cardapio;

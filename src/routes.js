@@ -1,10 +1,10 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 // Importação dos itens Cardapio, Login e Cadastro que serão renderizados nas rotas
-import Cardapio from './pages/Home/index.js';
-import Login from './pages/Private/Login/index.js';
-import Cadastro from './pages/Private/Cadastro/index.js'; 
-import ListaProduto from './pages/Private/ListProd/ListProd.js'; 
+import Home from "./pages/Home/index.js";
+import Login from './pages/Login/index.js';
+import Cadastro from './pages/Cadastro/index.js'; 
+import ListaProduto from './pages/ListProd/ListProd.js'; 
 
 export default function Rotas() {
     return (
@@ -14,7 +14,7 @@ export default function Rotas() {
             que indica qual componente deve ser renderizado quando a rota for acessada. */}
             <Routes>
                 {/* Logo se o atributo path houver apenas a barra seguirá para o cardápio, se houver o nome da respectiva após seguirá para a mesma */}
-                <Route path='/' index element={<Cardapio />} />
+                <Route path='/' element={<Home/>} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/listaproduto' element={<ListaProduto />} />
                 <Route path='/cadastro' element={<Cadastro />} />

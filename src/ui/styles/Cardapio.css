@@ -1,8 +1,6 @@
 .container{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 10vh);
     overflow: hidden;
 }
@@ -10,7 +8,8 @@
 .card{
     width: 50vw;
     height: 100%;
-    background-color: black;
+    background-color: white;
+    border: 2px double #FFB500;
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -84,12 +83,7 @@
     display: flex;
     justify-content: flex-end;
     padding: 0 1vw 0 1vw;
-    width: max-content;
 }
-/* .lista-produto{
-    padding: 0 1vw 0 1vw;
-    width: max-content;
-} */
 .col-area{
     width: 25vw;
     display: flex;
@@ -100,7 +94,8 @@
 }
 .col{
     font-size: 2vw;
-    color: rgb(255, 255, 255);
+    padding-left: 15px;
+    color: black;
 }
 .col::first-letter{
     text-transform: uppercase;
@@ -116,16 +111,13 @@
     display: flex;
     align-items: center;
 }
-.textp-direita{
-    text-align: end;
-}
+
 
 /* Parte de Pratos Prontos e Por Quilo */
 .meio-pratos{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     margin-bottom: 30px;
 }
 .pratos{
@@ -138,33 +130,34 @@
 
 /* Nav Lateral */
 .caixa{
-    width: 25vw;
+    width: 25%;
     display: flex;
     align-items: center;
-}
-.nav{
-    position: absolute;
-    left: 0;
 }
 .links{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: black;
-    background-color: #d7d7d799;
+    background-color: #000000ca;
     border-radius: 0 5px 20px 0;
+}
+button{
+    background-color: transparent;
+    border: none;
 }
 .page{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: black;
+    color: white;
     width: 15vw;
     height: 7vh;
     font-size: 1.5vw;
     border-bottom: 2px solid #FFB500;
     border-radius: 0 0 20px;
+    cursor: pointer;
+    user-select: none;
 }
 .page::first-letter{
     text-transform: uppercase;
@@ -199,7 +192,6 @@
 
 @media(max-width:900px){
     .card{
-        border: 2px double #FFB500;
         margin: 10px 0 10px 0;
         width: 100%;
     }
@@ -234,6 +226,7 @@
         display: flex;
         position: relative;
         left: 0;
+        overflow-y: hidden;
     }
     .footer{
         display: none;
