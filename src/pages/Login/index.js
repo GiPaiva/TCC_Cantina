@@ -1,64 +1,64 @@
 import React, { useState } from 'react';
-// Importamos a estilização login.css
 import '../../ui/styles/Login.css';
-import axios from 'axios';
+import { login } from '../../api/api';
+import { useNavigate} from "react-router-dom";
 
-
-function Login() {
-  const [username, setUsername]  = useState('');
+function Login(props) {
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const history = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post('/api/login', { username, password });
-      const { token } = response.data;
-      localStorage.setItem('token', token); // save token to local storage
-      // redirect to restricted page
+      const response = await login(userName, password)
+      // Handle the response here (e.g. store the JWT token)
+      const token = response.data;
+      console.log(token);
+      localStorage.setItem('token', token);
+      // Redirect to the listaproduto page
+      history('/listaproduto');
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div>
+    <div >
       <main className="container centro">
         <div className="informacoes">
           <div className="caixa-login">
-          {/* Div caixa-login é o espaço onde inserimos o formulário com a requisição de senha e usuário */}
-          <p className="titulo-login">Login</p>
+            <p className="titulo-login">Login</p>
             <div>
-              {/* Formulário onde há a inserção das informações pelos inputs */}
               <form className="form-login" onSubmit={handleSubmit}>
-
-                {/* Inputs e botão que usamos para fazer a inserção e entrega das informações pelos campos respectivos */}
-                <input 
+                <input
                   type="text"
-                  className="input" 
+                  className="input"
                   placeholder="Username"
-                  name="username" 
-                  id="username" 
-                  value={username} 
-                  onChange={(e) => setUsername(e.target.value)}
+                  name="username"
+                  id="username"
+                  value={userName}
+                  onChange={(event) => setUserName(event.target.value)}
+                  required
                 />
-                
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="password"
                   placeholder="•••••••"
-                  name="senha" 
-                  id="senha"
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  id="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  required
                 />
-
-                <button className="btn-login" type="submit">Entrar</button>
+                <button className="btn-login" type="submit">
+                  Entrar
+                </button>
               </form>
             </div>
           </div>
         </div>
-      </main>  
-      <div classNameName='caixa'></div>
+      </main>
     </div>
   );
 }

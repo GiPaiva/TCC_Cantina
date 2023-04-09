@@ -4,7 +4,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home/index.js";
 import Login from './pages/Login/index.js';
 import Cadastro from './pages/Cadastro/index.js'; 
-import ListaProduto from './pages/ListProd/ListProd.js'; 
+import ListaProduto from './pages/ListProd/ListProd.js';
+import Detalhes from "./pages/Home/detalhes.js";
 
 export default function Rotas() {
     return (
@@ -14,7 +15,8 @@ export default function Rotas() {
             que indica qual componente deve ser renderizado quando a rota for acessada. */}
             <Routes>
                 {/* Logo se o atributo path houver apenas a barra seguirá para o cardápio, se houver o nome da respectiva após seguirá para a mesma */}
-                <Route path='/' element={<Home/>} />
+                <Route path='/' element={<Home />} />
+                <Route path='/detalhes' element={<Detalhes />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/listaproduto' element={<ListaProduto />} />
                 <Route path='/cadastro' element={<Cadastro />} />

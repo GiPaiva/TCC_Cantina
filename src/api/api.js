@@ -1,8 +1,6 @@
 import axios from 'axios';
-
-
 const API_BASE_URL = 'https://api-cantina-production.up.railway.app/api';
-
+ 
 
 export const getProducts = async () => {
   try {
@@ -31,6 +29,7 @@ export const getProductsByCategory = async (categoria) => {
   }
 };
 
+
 export const createProduct = async (productData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/produtos`, productData);
@@ -40,29 +39,33 @@ export const createProduct = async (productData) => {
   }
 };
 
-export const login = async (username, password) => {
+
+export const login = async (userName, password) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/login`, {
-      username,
-      password,
+    const response = await axios.post(`${API_BASE_URL}/usuarios`, {
+      params: {        
+        userName: userName,
+        password: password,
+        key: '1363dc7316d70ecf0803a4bd24ac15ab'
+      }
     });
-    return response.data.access_token;
+    console.log(response);
+    return response.data.token;
   } catch (error) {
     console.error(error);
   }
 };
 
-export const getRestrictedData = async (token) => {
-  try {
-    const response = await axios.get('/listaproduto', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
+// export const getRestrictedData = async (token) => {
+//   try {
+//     const response = await axios.get(`${API_BASE_URL}/restricted`, {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
