@@ -3,16 +3,20 @@
     width: 100%;
     height: calc(100vh - 10vh);
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .card{
-    width: 50vw;
-    height: 100%;
+    width: 55%;
+    height: calc(100%);
     background-color: white;
     border: 2px double #FFB500;
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
 }
 .card::-webkit-scrollbar{
     display: none;
@@ -23,12 +27,6 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 15px;
-}
-.direita{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-right: 15px;
 }
 
 .categoria-caixa{
@@ -52,15 +50,6 @@
     justify-content: center;
 }
 
-.body-detalhesD{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-
 .body-detalhes-div1, 
 .body-detalhes-div2, 
 .body-detalhes-div3{
@@ -79,18 +68,28 @@
 }
 
 /*Produtos*/
-.lista{
+.lista-produto{
     display: flex;
-    justify-content: flex-end;
-    padding: 0 1vw 0 1vw;
+    justify-content: center;
+}
+.tabela-produto{
+    border-bottom: 2px solid #444444;
+    height: 7vh;
+    display: flex;
+    width: 50vw;
+    align-items: center;
 }
 .col-area{
-    width: 25vw;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
-.col-area-direita{
-    justify-content: flex-end;
+.col-texto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .col{
     font-size: 2vw;
@@ -100,8 +99,9 @@
 .col::first-letter{
     text-transform: uppercase;
 }
-.produto-direita{
-    text-align: end;
+.produto-preco{
+    font-size: 2vw;
+    align-self: center;
 }
 .texto{
     font-size: 0.6vw;
@@ -113,26 +113,15 @@
 }
 
 
-/* Parte de Pratos Prontos e Por Quilo */
-.meio-pratos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-.pratos{
-    font-size: 4vw;
-    color: #FFB500;
-}
-
-
-
 
 /* Nav Lateral */
 .caixa{
-    width: 25%;
     display: flex;
     align-items: center;
+}
+.nav{
+    position: absolute;
+    left: 0;
 }
 .links{
     display: flex;
@@ -194,6 +183,9 @@ button{
     .card{
         margin: 10px 0 10px 0;
         width: 100%;
+        height: calc(100% - 10%);
+        display: flex;
+        flex-direction: column;
     }
     .page{
         font-size: 4vw;

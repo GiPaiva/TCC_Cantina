@@ -38,15 +38,15 @@ function ListaProd(){
     fetchData();
   }, [currentPage]);
 
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    if (token) {
-      go.navigate('Home');
-    } else {
-      go.navigate('Login');
-      // ou exibir uma mensagem na tela informando que o usuário precisa fazer login
-    }
-  }, [go, token]);
+  // const token = localStorage.getItem('token');
+  // useEffect(() => {
+  //   if (token !== 'undefined') {
+  //     go('/listaproduto');
+  //   } else {
+  //     go('/login');
+  //     // ou exibir uma mensagem na tela informando que o usuário precisa fazer login
+  //   }
+  // }, [go, token]);
 
   return (
     <div>
@@ -62,7 +62,6 @@ function ListaProd(){
             <button className="page" onClick={() => handleButtonClick('tapiocassalgadas')}>Tapiocas Salgadas</button>
             <button className="page" onClick={() => handleButtonClick('tapiocasdoces')}>Tapiocas Doces</button>
             <button className="page" onClick={() => handleButtonClick('sobremesas')}>Sobremesas</button>
-            <button className="page" onClick={() => handleButtonClick('acais')}>Açaí</button>
             <button className="page" onClick={() => handleButtonClick('pratosprontos')}>Pratos Prontos</button>
             <button className="page" onClick={() => handleButtonClick('porquilo')}>Por Quilo</button>
           </div>
@@ -86,9 +85,6 @@ function ListaProd(){
                     (currentPage !== 'porquilo') && (
                       <p className='categoria-titulo'>{currentPage}</p>
                     )}
-                  {currentPage === 'acais' && (
-                    <p className='categoria-titulo'>Açaís</p>
-                  )}
                   {currentPage === 'tapiocasdoces' && (
                     <p className='categoria-titulo'>Tapiocas Doces</p>
                   )}
@@ -113,22 +109,23 @@ function ListaProd(){
               <div>
                 <table className='lista-produto'>
                     {/*(Se) Caso o array não estiver vazio, verificando pelo tamanho deste */}
-                    {products.length > 0 ? (
+                    {products?.length > 0 ? (
                       <tbody>
                         {products.map((uDados, index) => (
-                          <tr key={index}>
-                            <td className='col-area'>
-                              <p className='col produto'>{uDados.nome}</p>
-                              <p className='col texto'>{uDados.descricao}</p>
-                            </td>
-                            <td className='col produto-preco'>R$ {uDados.preco}</td>
-                            <td className='col btn'>
-                              <Link className='btn-edit' to={"/editProd" + uDados.nome} state={{ some: "value" }}>Editar</Link>
-                              <Link className='btn-delet' to={"/deletProd" + uDados.nome} >Deletar</Link>
-                            </td>
-                          </tr>
+                          <div className="tabela-produto">
+                            <tr key={index} className='col-area'>
+                              <td className='col-texto'>
+                                <p className='col produto'>{uDados.nome}</p>
+                                <p className='col texto'>{uDados.descricao}</p>
+                              </td>
+                              <td className='col produto-preco'>R$ {uDados.preco}</td>
+                              <td className='col btn'>
+                                <Link className='btn-edit' to={"/editProd" + uDados.nome} state={{ some: "value" }}>Editar</Link>
+                                <Link className='btn-delet' to={"/deletProd" + uDados.nome} >Deletar</Link>
+                              </td>
+                            </tr>
+                          </div>
                         ))}
-                      
                       </tbody>
                     ) : (
                       /*(Senão) Caso o array não estiver vazio */
@@ -146,9 +143,6 @@ function ListaProd(){
     
         <div className='caixa footer'>
           <div className='links-footer'>
-            <Link className='link'>
-              <img className='imgs' src={logoutimg} alt='Logout' />
-            </Link>
             <Link className='link' >
               <img className='imgs' src={listaimg} alt='Lista de Pedidos' />
             </Link>
@@ -160,6 +154,9 @@ function ListaProd(){
             </Link>
             <Link className='link'>
               <img className='imgs' src={cadastrofunimg} alt='Cadastrar Funcionario' />
+            </Link>
+            <Link className='link'>
+              <img className='imgs' src={logoutimg} alt='Logout' />
             </Link>
           </div>
         </div>

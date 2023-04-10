@@ -155,8 +155,6 @@ span{
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        height: 900px;
     }
     .links-footer{
         display: flex;

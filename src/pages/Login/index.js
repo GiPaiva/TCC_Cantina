@@ -39,6 +39,7 @@ function Login(props) {
                   id="username"
                   value={userName}
                   onChange={(event) => setUserName(event.target.value)}
+                  autoFocus
                   required
                 />
                 <input

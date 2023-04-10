@@ -1,6 +1,5 @@
-import { getProducts } from "../../../api/api";
-import { useEffect, useState } from "react";
-import '../../styles/Cardapio.css'
+import { useState } from "react";
+import '../../styles/Cardapio.css';
 
 export default function FormularioAdd(){
     const [formvalue, setFormvalue] = useState({
@@ -8,16 +7,7 @@ export default function FormularioAdd(){
         preco: 0,
         descricao:'', 
         categoria:'', 
-      });
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await getProducts();
-            setProducts(data);
-        };
-        fetchData();
-    }, []);
+    });
 
     const handleInput=(e)=>{
         const {name, value}= e.target;
@@ -54,7 +44,7 @@ export default function FormularioAdd(){
                     <option value={'porquilo'}>Por Quilo</option>
                 </select>
                 <span>R$</span>
-                <input type="number" className='input-preco' name='preco' value={formvalue.preco} onChange={ handleInput} placeholder='0.00'/>
+                <input type="number" className='input-preco' name='preco' value={formvalue.preco} onChange={ handleInput} placeholder='0.00' />
                 <button type='submit' className='btn-submit'>Salvar</button>
             </form>
         </div>

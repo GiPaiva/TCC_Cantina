@@ -22,8 +22,11 @@ export default function Home() {
                         <button>Detalhes</button>
                     </Link>
                     <Link className="linkLD" to={'/login'}>
-                        <img width={'400px'} height={'162.66px'} classname="genesis" src={cantinalogo} alt="login" />
+                        <img width={'400px'} height={'162.66px'} className="genesis" src={cantinalogo} alt="login" />
                         <button>Login</button>
+                    </Link>
+                    <Link className="linkLD" to={'/cardapio'}>
+                        <button>Cardapio</button>
                     </Link>
                 </div>
             </main>
