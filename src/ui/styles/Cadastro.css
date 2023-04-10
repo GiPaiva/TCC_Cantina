@@ -45,7 +45,7 @@
 }
 .inputt{
     height: 4vh;
-    width: 80%;
+    width: 18vw;
     padding: 20px;
     border-radius: 40px;
     background-color: #000;
@@ -62,7 +62,7 @@
 
 .btn-cadastro{
     height: 4vh;
-    width: 8vw;
+    width: 5vw;
     margin-right: 15px;
     border-radius: 20px;
     border: none;
@@ -76,4 +76,26 @@
 
 .btn-cadastro:hover{
     transform: scale(1.1);
+}
+
+@media (max-width: 1100px){
+    .inputt{
+        width: 35vw;
+    }
+    .btn-cadastro{
+        width: 10vw;
+        font-size: 2.5vw;
+    }
+}
+@media (max-width: 550px){
+    .inputt{
+        width: 40vw;
+    }
+    .inputt::placeholder{
+        font-size: 4vw;
+    }
+    .btn-cadastro{
+        width: 12vw;
+        font-size: 3vw;
+    }
 }

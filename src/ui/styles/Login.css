@@ -104,10 +104,13 @@
     .caixa-login{
         width: 60vw;
     }
+    .input::placeholder{
+        font-size: 3.5vw;
+    }
     .input{
         width: 50vw;
     }
     .btn-login{
-        width: 15vw;
+        width: 20vw;
     }
 }
