@@ -5,13 +5,13 @@ import { useNavigate} from "react-router-dom";
 
 function Login(props) {
   const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+  const [senha, setSenha] = useState('');
   const history = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await login(userName, password)
+      const response = await login(userName, senha)
       // Handle the response here (e.g. store the JWT token)
       const token = response.data;
       console.log(token);
@@ -48,8 +48,8 @@ function Login(props) {
                   placeholder="•••••••"
                   name="password"
                   id="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
+                  value={senha}
+                  onChange={(event) => setSenha(event.target.value)}
                   required
                 />
                 <button className="btn-login" type="submit">

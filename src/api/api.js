@@ -40,14 +40,11 @@ export const createProduct = async (productData) => {
 };
 
 
-export const login = async (userName, password) => {
+export const login = async (userName, senha) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/usuarios`, {
-      params: {        
-        userName: userName,
-        password: password,
-        key: '1363dc7316d70ecf0803a4bd24ac15ab'
-      }
+      userName,
+      senha
     });
     console.log(response);
     return response.data.token;

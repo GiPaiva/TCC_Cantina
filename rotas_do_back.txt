@@ -1,0 +1,72 @@
+Rotas do BackEnd-
+
+Produtos - 
+Protegidas pela Key
+	get. https://api-cantina-production.up.railway.app/api/produtos
+	get. https://api-cantina-production.up.railway.app/api/produtos/{categoria}
+Protegido por Token
+	post. https://api-cantina-production.up.railway.app/api/produtos/
+	put. https://api-cantina-production.up.railway.app/api/produtos/
+	delete. https://api-cantina-production.up.railway.app/api/produtos/
+
+
+Usuarios - 
+Protegido por Token
+	post. https://api-cantina-production.up.railway.app/api/(verificação)
+	post. https://api-cantina-production.up.railway.app/api/(cadastro)
+
+
+Cliente - 
+Protegido por Token
+	get. https://api-cantina-production.up.railway.app/api/
+	get. https://api-cantina-production.up.railway.app/api/
+	post. https://api-cantina-production.up.railway.app/api/
+	put. https://api-cantina-production.up.railway.app/api/
+	delete. https://api-cantina-production.up.railway.app/api/
+
+
+Compras - 
+Protegido por Token
+	get. https://api-cantina-production.up.railway.app/api/
+	get. https://api-cantina-production.up.railway.app/api/
+	post. https://api-cantina-production.up.railway.app/api/
+	put. https://api-cantina-production.up.railway.app/api/
+	delete. https://api-cantina-production.up.railway.app/api/
+	delete. https://api-cantina-production.up.railway.app/api/
+
+
+
+BASE URL: https://api-cantina-production.up.railway.app/api/
+	
+  Públicas
+	'LOGIN': post (/usuarios):
+	  Precisa enviar:
+	    - userName
+	    - senha
+
+	  Retorna:
+	    - mensagem de sucesso ou falha;
+	    - token de autenticação (deve armazená-lo no local Storage)
+
+
+  Protegidas com parâmetro key (?key=)
+
+	Produtos:
+	  'PEGAR TODOS OS PRODUTOS': get (/produtos)
+
+	  'PEGAR PRODUTOS POR CATEGORIA': get(/produtos/<nome_da_cateogria>)
+
+  Protegidas com token de autenticação (Bearer token)
+	
+	Usuários:
+	  'CADASTRAR NOVO USUÁRIO': post (/usuarios/cadastro)
+	    Precisa enviar:
+	      - userName;
+	      - senha;
+	      - confirmaSenha;
+	
+
+
+
+
+
