@@ -38,15 +38,15 @@ function ListaProd(){
     fetchData();
   }, [currentPage]);
 
-  // const token = localStorage.getItem('token');
-  // useEffect(() => {
-  //   if (token !== 'undefined') {
-  //     go('/listaproduto');
-  //   } else {
-  //     go('/login');
-  //     // ou exibir uma mensagem na tela informando que o usuário precisa fazer login
-  //   }
-  // }, [go, token]);
+  const token = localStorage.getItem('token');
+  useEffect(() => {
+    if (token !== 'undefined') {
+      go('/listaproduto');
+    } else {
+      go('/login');
+      // ou exibir uma mensagem na tela informando que o usuário precisa fazer login
+    }
+  }, [go, token]);
 
   return (
     <div>

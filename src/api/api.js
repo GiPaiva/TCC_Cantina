@@ -46,23 +46,22 @@ export const login = async (userName, senha) => {
       userName,
       senha
     });
-    console.log(response);
     return response.data.token;
   } catch (error) {
     console.error(error);
   }
 };
 
-// export const getRestrictedData = async (token) => {
-//   try {
-//     const response = await axios.get(`${API_BASE_URL}/restricted`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
-//     return response.data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
+export const getRestrictedData = async (token) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/usuarios`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
