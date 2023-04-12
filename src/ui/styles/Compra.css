@@ -1,0 +1,42 @@
+.inputtp{
+    background-color: bisque;
+    align-items: center;
+
+}
+
+
+.lista-compras{
+    background-color: rgb(255, 255, 255);
+    width: 60vw;
+    height: 50vh;
+    align-items: center;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+
+}
+
+.textoo{
+    color: black;
+    border-radius: 5px;
+    height: 3vh;
+    width: 9vw;   
+}
+
+.btn-compra{
+    background-color: #FFB500;
+    border-radius: 10px;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    height: 45px;
+    width: 90px;
+}
+
+.compra{
+    background-color: #fff;
+    height: 4vh;
+    width: 20vw;
+    padding: 10px;
+    color: rgb(255, 0, 238);
+
+}
