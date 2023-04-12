@@ -29,9 +29,10 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
-
+.caixa-link{
+    padding-bottom: 55px;
+}
 .linkLD{
     height: 50%;
     display: flex;
@@ -44,6 +45,13 @@
     color: #BDA03C;
     font-size: 30px;
     cursor: pointer;
+    margin-top: 20px;
+    border-radius: 20px ;
+    width: 100%;
+    transition: background-color .7s;
+}
+.linkLD button:hover{
+    background-color: white;
 }
 
 @media(max-width:1440px){

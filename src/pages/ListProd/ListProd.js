@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductsByCategory } from '../../api/api';
-import { useNavigate } from 'react-router-dom';
 
 //Imgs
 import listaimg from '../../ui/imgs/lista.png';
@@ -21,7 +20,6 @@ import '../../ui/styles/ProdutoEdit.css';
 function ListaProd(){
   const [currentPage, setCurrentPage] = useState('salgados');
   const [products, setProducts] = useState([]);
-  const go = useNavigate();
   
   //função do botão
   const handleButtonClick = async (page) => {
@@ -38,15 +36,6 @@ function ListaProd(){
     fetchData();
   }, [currentPage]);
 
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    if (token !== 'undefined') {
-      go('/listaproduto');
-    } else {
-      go('/login');
-      // ou exibir uma mensagem na tela informando que o usuário precisa fazer login
-    }
-  }, [go, token]);
 
   return (
     <div>

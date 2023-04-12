@@ -68,5 +68,6 @@ BASE URL: https://api-cantina-production.up.railway.app/api/
 
 
 
-
+Site para aprender autenticação 
+"https://blog.appseed.us/react-user-authentication-jwt-token/"
 

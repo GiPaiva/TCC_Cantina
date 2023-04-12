@@ -48,7 +48,6 @@ function Cardapio() {
         </div>
         <div className='card'>
             <div className='esquerda'>
-
                 <div className='categoria-caixa'>
                   <div>
                         {/* Uma peculidade em relação a escrita da palavra, 
@@ -92,10 +91,10 @@ function Cardapio() {
                                   {products.map((uDados) => (
                                     <div className="tabela-produto">
                                       <tr className='col-area'>
-                                          <div className='col-texto'>
+                                          <span className='col-texto'>
                                               <td className='col produto'>{uDados.nome}</td>
                                               <td className='col texto'>{uDados.descricao}</td>
-                                          </div>
+                                          </span>
                                           <td className='produto-preco'>R$ {uDados.preco.toFixed(2).replace('.',',')}</td>
                                       </tr>
                                     </div>

@@ -17,16 +17,18 @@ export default function Home() {
                     </p> 
                 </div>
                 <div className="linksLD">
+                    <div className="caixa-link">
+                        <Link className="linkLD" to={'/login'}>
+                            <img width={'400px'} height={'162.66px'} className="genesis" src={cantinalogo} alt="login" />
+                            <button>Login</button>
+                        </Link>
+                        <Link className="linkLD" to={'/cardapio'}>
+                            <button>Cardapio</button>
+                        </Link>
+                    </div>
                     <Link className="linkLD" to={'/detalhes'}>
                         <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
                         <button>Detalhes</button>
-                    </Link>
-                    <Link className="linkLD" to={'/login'}>
-                        <img width={'400px'} height={'162.66px'} className="genesis" src={cantinalogo} alt="login" />
-                        <button>Login</button>
-                    </Link>
-                    <Link className="linkLD" to={'/cardapio'}>
-                        <button>Cardapio</button>
                     </Link>
                 </div>
             </main>

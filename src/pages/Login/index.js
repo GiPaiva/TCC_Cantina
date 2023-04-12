@@ -13,7 +13,7 @@ function Login(props) {
     try {
       const response = await login(userName, senha)
       // Handle the response here (e.g. store the JWT token)
-      const token = response.data.token;
+      const token = response;
       console.log(token);
       localStorage.setItem('token', token);
       // Redirect to the listaproduto page

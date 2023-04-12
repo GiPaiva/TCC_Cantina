@@ -49,8 +49,8 @@
     justify-content: center;
 }
 .tabela-produto{
-    border-bottom: 2px solid #444444;
-    height: 7vh;
+    border-bottom: 2px solid #818181;
+    height: 10vh;
     display: flex;
     width: 50vw;
     align-items: center;
@@ -64,8 +64,7 @@
 }
 .col-texto{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
 }
 .col{
     font-size: 2vw;
@@ -81,8 +80,6 @@
 }
 .texto{
     font-size: 0.6vw;
-    max-width: 70%;
-    padding: 0px 10px;
     color: #ffbb00;
     display: flex;
     align-items: center;

@@ -15,16 +15,18 @@ export default function detalhes() {
                         de Desenvolvimento de Sistemas na escola proficionalizante SENAI Suíço-Brasileira "Paulo Ernesto Tolle"</p>
                 </div>
                 <div className="linksLD">
-                    <Link className="linkLD" to={'/'}>
+                    <div className="caixa-link">
+                        <Link className="linkLD" to={'/login'}>
+                            <img width={'400px'} height={'162.66px'} className="genesis" src={cantinalogo} alt="login" />
+                            <button>Login</button>
+                        </Link>
+                        <Link className="linkLD" to={'/cardapio'}>
+                            <button>Cardapio</button>
+                        </Link>
+                    </div>
+                    <Link className="linkLD" to={'/detalhes'}>
                         <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
-                        <button>Home</button>
-                    </Link>
-                    <Link className="linkLD" to={'/login'}>
-                        <img width={'400px'} height={'162.66px'} classname="genesis" src={cantinalogo} alt="login" />
-                        <button>Login</button>
-                    </Link>
-                    <Link className="linkLD" to={'/cardapio'}>
-                        <button>Cardapio</button>
+                        <button>Detalhes</button>
                     </Link>
                 </div>
             </main>

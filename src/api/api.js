@@ -54,7 +54,7 @@ export const login = async (userName, senha) => {
 
 export const getRestrictedData = async (token) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/usuarios`, {
+    const response = await axios.get(`${API_BASE_URL}/`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
