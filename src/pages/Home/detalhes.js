@@ -24,9 +24,9 @@ export default function detalhes() {
                             <button>Cardapio</button>
                         </Link>
                     </div>
-                    <Link className="linkLD" to={'/detalhes'}>
+                    <Link className="linkLD" to={'/'}>
                         <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
-                        <button>Detalhes</button>
+                        <button>Home</button>
                     </Link>
                 </div>
             </main>
