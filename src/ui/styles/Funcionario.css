@@ -1,0 +1,99 @@
+.title1{
+    color:#FFB500 ;
+    font-size: 2.5vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    color: #FFB500;
+    text-align: center;     
+    font-weight: 100;
+    font-size: 75px;
+    
+}
+
+
+.cadastro{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.81)
+}
+
+.form-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 30vh;
+    width: 40vw;
+    gap: 45px;
+}
+
+.formulario{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputt{
+    height: 4vh;
+    width: 18vw;
+    padding: 20px;
+    border-radius: 40px;
+    background-color: #000000;
+    border-bottom: 2px solid #FFB500;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 5px;
+    align-items: center;
+    font-weight: 100;   
+}
+.inputt::placeholder{
+    color: #ffffffa2;
+}
+
+.btn-cadastro{
+    height: 5vh;
+    width: 9vw;
+    border-radius: 20px;
+    border: none;
+    background-color: #FFB500;
+    color: #000000;
+    cursor: pointer;
+    float: right;
+    font-size: 50%;
+    transition: 0.5s all ease-in-out;
+}
+
+.btn-cadastro:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 1100px){
+    .inputt{
+        width: 35vw;
+    }
+    .btn-cadastro{
+        width: 10vw;
+        font-size: 2.5vw;
+    }
+}
+@media (max-width: 550px){
+    .inputt{
+        width: 40vw;
+    }
+    .inputt::placeholder{
+        font-size: 4vw;
+    }
+    .btn-cadastro{
+        width: 12vw;
+        font-size: 3vw;
+    }
+}
