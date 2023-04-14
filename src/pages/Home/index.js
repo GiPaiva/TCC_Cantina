@@ -25,11 +25,11 @@ export default function Home() {
                         <Link className="linkLD" to={'/cardapio'}>
                             <button>Cardapio</button>
                         </Link>
+                        <Link className="linkLD" to={'/detalhes'}>
+                            <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
+                            <button>Detalhes</button>
+                        </Link>
                     </div>
-                    <Link className="linkLD" to={'/detalhes'}>
-                        <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
-                        <button>Detalhes</button>
-                    </Link>
                 </div>
             </main>
         </div>
