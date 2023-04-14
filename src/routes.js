@@ -8,6 +8,7 @@ import ListaProduto from './pages/ListProd/ListProd.js';
 import Detalhes from "./pages/Home/detalhes.js";
 import Cardapio from "./pages/Home/Cardapio.js";
 import Compra from "./pages/Compra/Compra.js"
+import Funcionario from "./pages/CadastroFunc/Funcionario.js";
 
 export default function Rotas() {
     return (
@@ -21,9 +22,10 @@ export default function Rotas() {
                 <Route path='/detalhes' element={<Detalhes />} />
                 <Route path='/cardapio' element={<Cardapio />} />
                 <Route path='/login' element={<Login />} />
-                <Route path='/cadastro' element={<Cadastro />} />
-                <Route path='/compra' element={<Compra />} />
                 <Route path='/listaproduto' element={<ListaProduto />}/>
+                <Route path='/cadastro' element={<Cadastro />} />
+                <Route path='/funcionario' element={<Funcionario />} />
+                <Route path='/compra' element={<Compra />} />
             </Routes>
         </BrowserRouter>
     )
