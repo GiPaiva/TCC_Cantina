@@ -1,7 +1,7 @@
 //Imports de Atributos
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsByCategory } from '../../api/api';
+import { Verifica, getProductsByCategory } from '../../api/api';
 
 //Imgs
 import listaimg from '../../ui/imgs/lista.png';
@@ -36,7 +36,7 @@ function ListaProd(){
     fetchData();
   }, [currentPage]);
 
-
+  
   return (
     <div>
       <div className='container view'>
@@ -133,9 +133,9 @@ function ListaProd(){
         <div className='caixa footer'>
           <div className='links-footer'>
             <Link className='link' >
-              <img className='imgs' src={listaimg} alt='Lista de Pedidos' />
+              <img className='imgs' src={listaimg} alt='Lista de Pedidos'/>
             </Link>
-            <Link className='link'>
+            <Link className='link' to={'/compra'}>
               <img className='imgs' src={compraimg} alt='Adicionar Pedido' />
             </Link>
             <Link className='link'>

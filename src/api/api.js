@@ -1,10 +1,8 @@
-import axios from 'axios';
-const API_BASE_URL = 'https://api-cantina-production.up.railway.app/api';
- 
+import axios from '.';
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/produtos`, {
+    const response = await axios.get(`/produtos`, {
       params:{
         key: '1363dc7316d70ecf0803a4bd24ac15ab'
       }
@@ -18,7 +16,7 @@ export const getProducts = async () => {
 
 export const getProductsByCategory = async (categoria) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/produtos/${categoria}`, {
+    const response = await axios.get(`/produtos/${categoria}`, {
       params:{
         key: '1363dc7316d70ecf0803a4bd24ac15ab'
       }
@@ -29,20 +27,9 @@ export const getProductsByCategory = async (categoria) => {
   }
 };
 
-
-export const createProduct = async (productData) => {
-  try {
-    const response = await axios.post(`${API_BASE_URL}/produtos`, productData);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-
 export const login = async (userName, senha) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/usuarios`, {
+    const response = await axios.post(`/usuarios`, {
       userName,
       senha
     });
@@ -52,9 +39,10 @@ export const login = async (userName, senha) => {
   }
 };
 
-export const getRestrictedData = async (token) => {
+
+export const createProduct = async (productData, token) => {
   try {
-    const response = await axios.get(`${API_BASE_URL}/`, {
+    const response = await axios.post(`/produtos`, productData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -64,4 +52,18 @@ export const getRestrictedData = async (token) => {
     console.error(error);
   }
 };
+
+
+// export const Auth = async (local,token) => {
+//   try {
+//     const response = await axios.post(`/`, {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
+//     return response.data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
