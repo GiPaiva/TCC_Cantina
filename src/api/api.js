@@ -1,6 +1,10 @@
+import { redirect } from 'react-router-dom';
 import axios from '.';
 
-
+//Logout
+export const Logout = () => {
+  localStorage.clear();
+}
 
 //Rotas protegidas com key
 export const getProducts = async () => {
@@ -218,7 +222,7 @@ export const deleteCompra = async (id, token) => {
 };
 
 // Excluir todas as compras de um único cliente
-export const AllDeleteCompraCliente = async () => {
+export const AllDeleteCompraCliente = async (numero, token) => {
   try {
     const response = await axios.delete(`/compras/cliente/`, {
       params: {

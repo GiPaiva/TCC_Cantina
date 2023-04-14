@@ -1,7 +1,7 @@
 //Imports de Atributos
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsByCategory } from '../../api/api';
+import { getProductsByCategory, Logout } from '../../api/api';
 // import Modal from 'react-modal';
 
 //Imgs
@@ -146,7 +146,7 @@ function ListaProd(){
     
         <div className='caixa footer'>
           <div className='links-footer'>
-            <Link className='link' >
+            <Link className='link' to={'/listaproduto'}>
               <img className='imgs' src={listaimg} alt='Lista de Pedidos'/>
             </Link>
             <Link className='link' to={'/compra'}>
@@ -158,7 +158,7 @@ function ListaProd(){
             <Link className='link' to={'/funcionario'}>
               <img className='imgs' src={cadastrofunimg} alt='Cadastrar Funcionario' />
             </Link>
-            <Link className='link'>
+            <Link className='link' onClick={Logout} to={'/'}>
               <img className='imgs' src={logoutimg} alt='Logout' />
             </Link>
           </div>
