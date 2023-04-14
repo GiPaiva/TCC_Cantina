@@ -1,7 +1,8 @@
 //Imports de Atributos
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Verifica, getProductsByCategory } from '../../api/api';
+import { getProductsByCategory } from '../../api/api';
+// import Modal from 'react-modal';
 
 //Imgs
 import listaimg from '../../ui/imgs/lista.png';
@@ -16,6 +17,7 @@ import FormularioAdd from '../../ui/components/Formulario/FormularioAdd';
 // Importação da estilização cardapio.css
 import '../../ui/styles/ProdutoEdit.css';
 
+// Modal.setAppElement('#root');
 
 function ListaProd(){
   const [currentPage, setCurrentPage] = useState('salgados');
@@ -36,7 +38,19 @@ function ListaProd(){
     fetchData();
   }, [currentPage]);
 
-  
+  // // Hook que demonstra se a modal está aberta ou não
+  // const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  // // Função que abre a modal
+  // function abrirModal() {
+  //   setIsOpen(true);
+  // }
+
+  // // Função que fecha a modal
+  // function fecharModal() {
+  //   setIsOpen(false);
+  // }
+
   return (
     <div>
       <div className='container view'>
@@ -109,8 +123,8 @@ function ListaProd(){
                               </td>
                               <td className='col produto-preco'>R$ {uDados.preco}</td>
                               <td className='col btn'>
-                                <Link className='btn-edit' to={"/editProd" + uDados.nome} state={{ some: "value" }}>Editar</Link>
-                                <Link className='btn-delet' to={"/deletProd" + uDados.nome} >Deletar</Link>
+                                <Link className='btn-edit'>Editar</Link>
+                                <Link className='btn-delet' to={"/deletProd" + uDados.id} >Deletar</Link>
                               </td>
                             </tr>
                           </div>
@@ -138,10 +152,10 @@ function ListaProd(){
             <Link className='link' to={'/compra'}>
               <img className='imgs' src={compraimg} alt='Adicionar Pedido' />
             </Link>
-            <Link className='link'>
+            <Link className='link' to={'/cadastro'}>
               <img className='imgs' src={cadastroimg} alt='Cadastrar Cliente' />
             </Link>
-            <Link className='link'>
+            <Link className='link' to={'/funcionario'}>
               <img className='imgs' src={cadastrofunimg} alt='Cadastrar Funcionario' />
             </Link>
             <Link className='link'>

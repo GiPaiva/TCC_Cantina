@@ -16,7 +16,7 @@ function Funcionario(){
                             <form action="" className="form-cadastro">
                             {/* Inputs e botão que usamos para fazer a inserção e entrega das informações pelos campos respectivos */}    
                             <input className="inputt" type="text" name="username" id="username" placeholder="Nome"/>
-                            <input className="inputt" type="telefone" name="telefone" id="telefone" placeholder="Telefone"/>
+                            <input className="inputt" type="text" name="senha" id="senha" placeholder="Senha"/>
                             </form>
                         </div>
                         <br/>

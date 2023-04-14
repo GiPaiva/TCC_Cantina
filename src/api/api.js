@@ -39,6 +39,20 @@ export const login = async (userName, senha) => {
   }
 };
 
+export const editProduto = async (id, token) => {
+  try{
+    const response = await axios.put(`/produtos/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response;
+  }
+  catch(error){
+    console.error(error);
+  }
+}
+
 
 export const createProduct = async (productData, token) => {
   try {
