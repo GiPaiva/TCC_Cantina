@@ -31,7 +31,7 @@
     justify-content: center;
 }
 .caixa-link{
-    padding-bottom: 55px;
+    padding-bottom: 15px;
 }
 .linkLD{
     height: 50%;
@@ -57,27 +57,35 @@
 @media(max-width:1440px){
     .container{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         overflow: scroll;
     }
-    .linksLD{
+    .caixa-link{
         display: flex;
         flex-direction: row;
+        align-items: end;
     }
 }
 @media(max-width:900px){
     .linkLD img{
         display: none;
     }
+    .caixa-link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
     .linkLD{
-        padding: 1em;
+        margin: 1em;
     }
 }
 @media(max-width:700px){
-    .linksLD{
-        /* justify-content: space-evenly; */
-        /* width: inherit; */
+    .caixa-link{
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        padding-bottom: 200px;
     }
 }

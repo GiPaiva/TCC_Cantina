@@ -23,11 +23,11 @@ export default function detalhes() {
                         <Link className="linkLD" to={'/cardapio'}>
                             <button>Cardapio</button>
                         </Link>
+                        <Link className="linkLD" to={'/'}>
+                            <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
+                            <button>Home</button>
+                        </Link>
                     </div>
-                    <Link className="linkLD" to={'/'}>
-                        <img width={'300px'} height={'162.66px'} className="genesis" src={genesislogo}  alt="logo do Genesis"/>
-                        <button>Home</button>
-                    </Link>
                 </div>
             </main>
         </div>
