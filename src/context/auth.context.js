@@ -1,16 +1,22 @@
-// import React, { useState, useContext } from "react";
-
-// const AuthContext = React.createContext(null);
-
-// export const AuthProvider = ({userData, children}) => {
-//     let [user, setUser] = useState(userData);
-
-//     return(
-//         <AuthContext.Provider value={{user, setUser}}>
-//             {children}
-//         </AuthContext.Provider>
-//     )
-// }
+//Puxar token de validação
+//Verificação do Token no LocalStorage --> envio dele na requisição
+//Salvar token no LocalStorage --> envio dele nas próximas requisições
 
 
-// export const useAuth = () => useContext(AuthContext);
+import { createContext, useState } from "react";
+
+export const AuthContext = createContext();
+
+
+export default function AuthProvider ({ children }) {
+
+    const [name, setName] = useState('Heitor');
+
+    const geraToken = async () => {};
+
+    return(
+        <AuthContext.Provider value={name}>
+            { children }
+        </AuthContext.Provider>
+    )
+};
