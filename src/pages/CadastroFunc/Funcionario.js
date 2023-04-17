@@ -1,4 +1,5 @@
 import '../../ui/styles/Funcionario.css';
+import { useState } from 'react';
 import { cadastraFun } from '../../api/api';
 
 function Funcionario(){

@@ -1,4 +1,5 @@
 import { CadastraClientes } from '../../api/api';
+import { useState } from 'react';
 import '../../ui/styles/Cadastro.css';
 
 function Cadastro(){
