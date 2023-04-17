@@ -26,6 +26,7 @@ export default function Rotas() {
                 <Route path='/cadastro' element={<Cadastro />} />
                 <Route path='/funcionario' element={<Funcionario />} />
                 <Route path='/compra' element={<Compra />} />
+                <Route path='/cadastrofuncionario' element={<Funcionario />} />
             </Routes>
         </BrowserRouter>
     )
