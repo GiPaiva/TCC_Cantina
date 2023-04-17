@@ -1,7 +1,8 @@
 //Imports de Atributos
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsByCategory, Logout } from '../../api/api';
+import { getProductsByCategory, Logout, Token } from '../../api/api';
+import { useContext } from 'react';
 // import Modal from 'react-modal';
 
 //Imgs

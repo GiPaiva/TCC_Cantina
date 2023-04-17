@@ -20,15 +20,15 @@ export default function Rotas() {
             que indica qual componente deve ser renderizado quando a rota for acessada. */}
         <AuthProvider>
             <Routes>
-            {/* Logo se o atributo path houver apenas a barra seguirá para o cardápio, se houver o nome da respectiva após seguirá para a mesma */}
-            <Route path="/" element={<Home />} />
-            <Route path="/detalhes" element={<Detalhes />} />
-            <Route path="/cardapio" element={<Cardapio />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/listaproduto" element={<ListaProduto />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/funcionario" element={<Funcionario />} />
-            <Route path="/compra" element={<Compra />} />
+                {/* Logo se o atributo path houver apenas a barra seguirá para o cardápio, se houver o nome da respectiva após seguirá para a mesma */}
+                <Route path="/" element={<Home />} />
+                <Route path="/detalhes" element={<Detalhes />} />
+                <Route path="/cardapio" element={<Cardapio />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/listaproduto" element={<ListaProduto />} />
+                <Route path="/cadastro" element={<Cadastro />} />
+                <Route path="/funcionario" element={<Funcionario />} />
+                <Route path="/compra" element={<Compra />} />
             </Routes>
         </AuthProvider>
     </BrowserRouter>

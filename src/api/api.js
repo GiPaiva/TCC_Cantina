@@ -1,4 +1,5 @@
 import axios from '.';
+import Login from "../pages/Login/index.js";
 
 //Logout
 export const Logout = () => {
@@ -48,19 +49,7 @@ export const login = async (userName, senha) => {
       userName,
       senha
     });
-    return response.data.token;
-  } catch (error) {
-    console.error(error);
-  }
-};
-//Rota de cadastrar usuario
-export const cadastraFun = async (userName, senha, confirmaSenha) => {
-  try {
-    const response = await axios.post(`/usuarios/cadastro`, {
-      userName,
-      senha,
-      confirmaSenha
-    });
+    console.log(response.data);
     return response.data.token;
   } catch (error) {
     console.error(error);
@@ -73,6 +62,24 @@ export const cadastraFun = async (userName, senha, confirmaSenha) => {
 
 
 //Rotas Produtos
+//Rota de cadastrar usuario
+export const cadastraFun = async (userName, senha, confirmaSenha, token) => {
+  try {
+    const response = await axios.post(`/usuarios/cadastro`, {
+      body: {
+        userName,
+        senha,
+        confirmaSenha
+      },
+      headers:{
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response.data.token;
+  } catch (error) {
+    console.error(error);
+  }
+};
 // Rota de atualizar produtos
 export const EditProduto = async (id,nome, preco, categoria, descricao, token) => {
   try{
