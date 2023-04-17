@@ -122,11 +122,13 @@ function ListaProd(){
                                 <p className='col produto'>{uDados.nome}</p>
                                 <p className='col texto'>{uDados.descricao}</p>
                               </td>
-                              <td className='col produto-preco'>R$ {uDados.preco}</td>
-                              <td className='col btn'>
-                                <Link className='btn-edit'>Editar</Link>
-                                <Link className='btn-delet' to={"/deletProd" + uDados.id} >Deletar</Link>
-                              </td>
+                              <div className='col tabela'>
+                                <td className='col produto-preco'>R$ {uDados.preco}</td>
+                                <td className='col btn'>
+                                  <Link className='btn-edit'>Editar</Link>
+                                  <Link className='btn-delet' to={"/deletProd" + uDados.id} >Deletar</Link>
+                                </td>
+                              </div>
                             </tr>
                           </div>
                         ))}
