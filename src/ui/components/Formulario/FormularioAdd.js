@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddProduct } from "../../../api/api";
 import '../../styles/Cardapio.css';
 
 export default function FormularioAdd(){
@@ -16,13 +17,13 @@ export default function FormularioAdd(){
     
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        const allInputsValue = {
-            nome: formvalue.nome.toLowerCase(),
-            descricao: formvalue.descricao.toLowerCase(),
-            categoria: formvalue.categoria.toLowerCase(),
-            preco: formvalue.preco
-        };
-        console.log(allInputsValue);
+        
+        const nome= formvalue.nome.toLowerCase();
+        const descricao = formvalue.descricao.toLowerCase();
+        const categoria =  formvalue.categoria.toLowerCase();
+        const preco = formvalue.preco;
+
+        AddProduct(nome, preco, categoria, descricao, token);
     }
     
     return (

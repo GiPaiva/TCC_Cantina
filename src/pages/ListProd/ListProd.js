@@ -1,7 +1,7 @@
 //Imports de Atributos
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsByCategory, Logout, Token } from '../../api/api';
+import { getProductsByCategory, Logout, DeleteProduto, Token } from '../../api/api';
 import { useContext } from 'react';
 // import Modal from 'react-modal';
 
@@ -126,7 +126,7 @@ function ListaProd(){
                                 <td className='col produto-preco'>R$ {uDados.preco}</td>
                                 <td className='col btn'>
                                   <Link className='btn-edit'>Editar</Link>
-                                  <Link className='btn-delet' to={"/deletProd" + uDados.id} >Deletar</Link>
+                                  <Link className='btn-delet' onClick={DeleteProduto(uDados.id, token)}>Deletar</Link>
                                 </td>
                               </div>
                             </tr>

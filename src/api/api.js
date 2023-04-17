@@ -251,7 +251,7 @@ export const AllDeleteCompraCliente = async (numero, token) => {
 
 //Rotas Clientes
 //Rota para cadastrar um cliente
-export const CadastraClientes = async (nome, numero,token) => {
+export const CadastraClientes = async (nome, numero, token) => {
   try {
     const response = await axios.post(`/clientes`, {
       body: {
