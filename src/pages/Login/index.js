@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import '../../ui/styles/Login.css';
 import { login } from '../../api/api';
 import { useNavigate} from "react-router-dom";
-// import { AuthContext } from '../../context/auth.context';
+import { AuthContext } from '../../context/auth.context';
 
 function Login(props) {
   const [userName, setUserName] = useState('');
@@ -10,7 +10,7 @@ function Login(props) {
   // const { saveToken } = useContext(AuthContext);
   const history = useNavigate();
 
-  //const { geraToken } = useContext(AuthContext);
+  const { geraToken, salvaToken } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,12 +21,18 @@ function Login(props) {
     //   console.log(token);
     //   localStorage.setItem('token', token);
     //   // Redirect to the listaproduto page
-       history('/listaproduto');
+      //  history('/listaproduto');
     // } catch (error) {
     //   console.error(error);
     // }
     
-    // geraToken(userName, senha);
+    const validaToken = async () => {
+      await geraToken(userName, senha);
+    
+    };
+
+    validaToken();
+  
 
     // try {
     //   history('listaproduto');
