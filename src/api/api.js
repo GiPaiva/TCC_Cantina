@@ -54,7 +54,7 @@ export const login = async (userName, senha) => {
 
 
 //Rotas protegidas por Token
-//Rotas Produtos
+//Rotas Usuarios
 //Rota de cadastrar usuario
 export const cadastraFun = async (userName, senha, confirmaSenha, token) => {
   try {
@@ -73,6 +73,7 @@ export const cadastraFun = async (userName, senha, confirmaSenha, token) => {
     console.error(error);
   }
 };
+//Rotas Produtos
 // Rota de atualizar produtos
 export const EditProduto = async (id,nome, preco, categoria, descricao, token) => {
   try{
@@ -122,6 +123,7 @@ export const DeleteProduto = async (id ,token) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    
     return response.data;
   } catch (error) {
     console.error(error);
@@ -274,7 +276,7 @@ export const GetCliente = async (token) => {
   }
 };
 
-//Rota para listar cliente específico 
+//Rota para listar cliente específico
 export const ClienteId = async (id, token) => {
   try {
     const response = await axios.get(`/clientes`, {
