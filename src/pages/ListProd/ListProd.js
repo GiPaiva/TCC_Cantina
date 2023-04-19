@@ -1,9 +1,7 @@
 //Imports de Atributos
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductsByCategory, Logout, DeleteProduto } from '../../api/api';
-// import { AuthContext } from "../contexts/AuthContext";
-// import Modal from 'react-modal';
 
 //Imgs
 import listaimg from '../../ui/imgs/lista.png';
@@ -18,16 +16,21 @@ import FormularioAdd from '../../ui/components/Formulario/FormularioAdd';
 // Importação da estilização cardapio.css
 import '../../ui/styles/ProdutoEdit.css';
 
-// Modal.setAppElement('#root');
 
 function ListaProd(){
   const [currentPage, setCurrentPage] = useState('salgados');
   const [products, setProducts] = useState([]);
+  const token = localStorage.getItem('token');
+
   
   //função do botão
   const handleButtonClick = async (page) => {
     getProductsByCategory(page)
     setCurrentPage(page); 
+  };
+
+  const DeleteButton = async (dados) => {
+    DeleteProduto(dados, token);
   };
 
   //Get dados de acordo com o que vier da seleção vindo da função do botão
@@ -38,22 +41,6 @@ function ListaProd(){
     };
     fetchData();
   }, [currentPage]);
-
-  // // Hook que demonstra se a modal está aberta ou não
-  // const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  // // Função que abre a modal
-  // function abrirModal() {
-  //   setIsOpen(true);
-  // }
-
-  // // Função que fecha a modal
-  // function fecharModal() {
-  //   setIsOpen(false);
-  // }
-  // const { token } = useContext(AuthContext);
-
-  const token = localStorage.getItem('token');
 
 
   return (
@@ -130,7 +117,7 @@ function ListaProd(){
                                 <td className='col produto-preco'>R$ {uDados.preco}</td>
                                 <td className='col btn'>
                                   <Link className='btn-edit'>Editar</Link>
-                                  <Link className='btn-delet' onClick={DeleteProduto(uDados.id, token)}>Deletar</Link>
+                                  <Link className='btn-delet' onClick={DeleteButton(uDados.id, token)}>Deletar</Link>
                                 </td>
                               </div>
                             </tr>

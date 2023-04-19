@@ -25,10 +25,10 @@ export default function Rotas() {
                 <Route path="/detalhes" element={<Detalhes />} />
                 <Route path="/cardapio" element={<Cardapio />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/compra" element={<Compra />} />
                 <Route path="/listaproduto" element={<ListaProduto />} />
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/funcionario" element={<Funcionario />} />
-                <Route path="/compra" element={<Compra />} />
             </Routes>
         </AuthProvider>
     </BrowserRouter>

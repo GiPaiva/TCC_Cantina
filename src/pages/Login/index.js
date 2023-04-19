@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, { useState } from 'react';
 import '../../ui/styles/Login.css';
 import { login } from '../../api/api';
 import { useNavigate} from "react-router-dom";
@@ -7,13 +7,13 @@ import { AuthContext } from '../../context/auth.context';
 function Login(props) {
   const [userName, setUserName] = useState('');
   const [senha, setSenha] = useState('');
-  // const { saveToken } = useContext(AuthContext);
   const history = useNavigate();
 
   const { geraToken, salvaToken } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     // try {
     //   const response = await login(userName, senha)
     //   // Handle the response here (e.g. store the JWT token)
@@ -25,7 +25,6 @@ function Login(props) {
     // } catch (error) {
     //   console.error(error);
     // }
-    
     const validaToken = async () => {
       await geraToken(userName, senha);
     
@@ -41,15 +40,6 @@ function Login(props) {
     // }
     
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const response = await login(userName, password);
-  //   const { token } = response.data;
-  //   saveToken(token);
-  //   history.push("/listaproduto");
-  // };
-
 
   return (
     <div >
