@@ -40,7 +40,7 @@ export default function AuthProvider ({ children }) {
                         localStorage.setItem('token', token);
                         console.log("Token salvo com sucesso.");
                         
-                        return "Operação bem sucedida.";
+                        return true;
 
                     } catch (error) {
                         console.log("Erro ao salvar o token no localStorage: " + error);
@@ -50,8 +50,8 @@ export default function AuthProvider ({ children }) {
                 }
 
         } catch (error) {
-            console.log("Erro ao fazer login: " + error);
-            return "Acesso negado: informações inválidas.";
+            console.log("Acesso negado: informações inválidas."+ error);
+            return false;
         }
     };
 

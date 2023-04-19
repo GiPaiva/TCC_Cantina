@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../../ui/styles/Login.css';
 import { login } from '../../api/api';
 import { useNavigate} from "react-router-dom";
@@ -21,13 +21,20 @@ function Login(props) {
     //   console.log(token);
     //   localStorage.setItem('token', token);
     //   // Redirect to the listaproduto page
-      //  history('/listaproduto');
+    
     // } catch (error) {
     //   console.error(error);
     // }
     const validaToken = async () => {
-      await geraToken(userName, senha);
-    
+      const response = await geraToken(userName, senha);
+
+      if(response === false){
+        console.log("Usuário ou senha incorret(os).");
+      } else {
+        
+        history('/listaproduto');
+      }
+
     };
 
     validaToken();
