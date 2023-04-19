@@ -81,7 +81,6 @@ function Cardapio() {
                   </div>
                 </div>
 
-
                 <div>
                   <table className='lista-produto'>
                       <tbody>

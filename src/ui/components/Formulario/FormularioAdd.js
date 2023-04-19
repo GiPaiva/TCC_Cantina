@@ -22,6 +22,7 @@ export default function FormularioAdd(){
         const descricao = formvalue.descricao.toLowerCase();
         const categoria =  formvalue.categoria.toLowerCase();
         const preco = formvalue.preco;
+        const token = localStorage.getItem('token');
 
         AddProduct(nome, preco, categoria, descricao, token);
     }

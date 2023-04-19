@@ -71,3 +71,32 @@ BASE URL: https://api-cantina-production.up.railway.app/api/
 Site para aprender autenticação 
 "https://blog.appseed.us/react-user-authentication-jwt-token/"
 
+
+authcontext
+
+import React, { createContext, useState } from "react";
+
+export const AuthContext = createContext();
+
+const AuthContextProvider = ({ children }) => {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  const saveToken = (token) => {
+    localStorage.setItem("token", token);
+    setToken(token);
+  };
+
+  const removeToken = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ token, saveToken, removeToken }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export default AuthContextProvider;
+

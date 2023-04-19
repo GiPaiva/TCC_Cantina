@@ -1,5 +1,4 @@
 import axios from '.';
-import Login from "../pages/Login/index.js";
 
 //Logout
 export const Logout = () => {
@@ -7,6 +6,7 @@ export const Logout = () => {
 }
 
 //Rotas protegidas com key
+//Rotas de Produtos (basico)
 export const getProducts = async () => {
   try {
     const response = await axios.get(`/produtos`, {
@@ -33,14 +33,6 @@ export const getProductsByCategory = async (categoria) => {
     console.error(error);
   }
 };
-
-
-
-
-
-
-
-//Rotas protegidas por Token
 //Rotas Usuarios
 //Rota de login
 export const login = async (userName, senha) => {
@@ -61,6 +53,7 @@ export const login = async (userName, senha) => {
 
 
 
+//Rotas protegidas por Token
 //Rotas Produtos
 //Rota de cadastrar usuario
 export const cadastraFun = async (userName, senha, confirmaSenha, token) => {

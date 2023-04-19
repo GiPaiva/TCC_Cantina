@@ -1,5 +1,5 @@
 import '../../ui/styles/Funcionario.css';
-import { useState } from 'react';
+import {useState} from 'react';
 import { cadastraFun } from '../../api/api';
 
 function Funcionario(){
@@ -20,6 +20,7 @@ function Funcionario(){
         const nome = formvalue.nome.toLowerCase();
         const senha = formvalue.senha.toLowerCase();
         const confirmaSenha = formvalue.confirmaSenha.toLowerCase();
+        const token = localStorage.getItem('token');
 
         cadastraFun(nome, senha, confirmaSenha, token);
     }

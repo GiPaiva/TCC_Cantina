@@ -1,8 +1,8 @@
 //Imports de Atributos
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { getProductsByCategory, Logout, DeleteProduto, Token } from '../../api/api';
-import { useContext } from 'react';
+import { getProductsByCategory, Logout, DeleteProduto } from '../../api/api';
+// import { AuthContext } from "../contexts/AuthContext";
 // import Modal from 'react-modal';
 
 //Imgs
@@ -51,6 +51,10 @@ function ListaProd(){
   // function fecharModal() {
   //   setIsOpen(false);
   // }
+  // const { token } = useContext(AuthContext);
+
+  const token = localStorage.getItem('token');
+
 
   return (
     <div>

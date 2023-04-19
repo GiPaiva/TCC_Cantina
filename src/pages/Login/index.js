@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import '../../ui/styles/Login.css';
 import { login } from '../../api/api';
-import { useNavigate} from "react-router-dom";
-import { useContext } from 'react';
-
-import { AuthContext } from '../../context/auth.context';
+//import { useNavigate} from "react-router-dom";
+import { login } from "../api/api";
+// import { AuthContext } from '../../context/auth.context';
 
 function Login(props) {
   const [userName, setUserName] = useState('');
   const [senha, setSenha] = useState('');
-  const history = useNavigate();
+  // const { saveToken } = useContext(AuthContext);
+  //const history = useNavigate();
 
-  const { geraToken } = useContext(AuthContext);
+  //const { geraToken } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ function Login(props) {
     //   console.log(token);
     //   localStorage.setItem('token', token);
     //   // Redirect to the listaproduto page
-        history('/listaproduto');
+       history('/listaproduto');
     // } catch (error) {
     //   console.error(error);
     // }
@@ -37,7 +37,13 @@ function Login(props) {
     
   };
 
-  
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const response = await login(userName, password);
+  //   const { token } = response.data;
+  //   saveToken(token);
+  //   history.push("/listaproduto");
+  // };
 
 
   return (

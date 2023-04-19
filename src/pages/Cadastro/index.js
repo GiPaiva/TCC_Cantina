@@ -17,7 +17,8 @@ function Cadastro(){
         e.preventDefault();
 
         const nome = formvalue.nome.toLowerCase();
-        const numero = formvalue.numero;
+        const numero = formvalue.numero.replace("-" && "(" && ")","");
+        const token = localStorage.getItem('token');
 
         CadastraClientes(nome, numero, token);
     }
@@ -37,8 +38,17 @@ function Cadastro(){
                             {/* Formulário onde há a inserção das informações pelos inputs */}
                             <form action="" className="form-cadastro" onSubmit={handleSubmit}>
                                 {/* Inputs e botão que usamos para fazer a inserção e entrega das informações pelos campos respectivos */}    
-                                <input className="inputt" type="text" name="username" id="username" placeholder="Nome" onChange={ handleInput} value={formvalue.nome}/>
-                                <input className="inputt" type="telefone" name="telefone" id="telefone" placeholder="Telefone" onChange={ handleInput} value={formvalue.numero}/>
+                                <input className="inputt" type="text"
+                                    name="username" id="username" placeholder="Nome"
+                                    value={formvalue.nome} onChange={ handleInput}
+                                    required
+                                />
+                                <input className="inputt" type="telefone"
+                                    name="telefone" id="telefone"
+                                    placeholder="Telefone" pattern='.{8,}' title='Telefone: xxxx-xxxx'
+                                    value={formvalue.numero} onChange={ handleInput}
+                                    required
+                                />
                             </form>
                         </div>
                         <br/>

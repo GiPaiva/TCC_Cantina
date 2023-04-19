@@ -15,8 +15,8 @@ import Funcionario from "./pages/CadastroFunc/Funcionario.js";
 export default function Rotas() {
   return (
     <BrowserRouter>
-      {/* Dentro do componente "Routes", são definidas as rotas da aplicação usando o componente "Route". 
-            Cada rota é definida através do atributo "path" que indica o caminho da rota e o atributo "element" 
+      {/* Dentro do componente "Routes", são definidas as rotas da aplicação usando o componente "Route".
+            Cada rota é definida através do atributo "path" que indica o caminho da rota e o atributo "element"
             que indica qual componente deve ser renderizado quando a rota for acessada. */}
         <AuthProvider>
             <Routes>
