@@ -1,15 +1,14 @@
 import React, {useContext, useState} from 'react';
 import '../../ui/styles/Login.css';
 import { login } from '../../api/api';
-//import { useNavigate} from "react-router-dom";
-import { login } from "../api/api";
+import { useNavigate} from "react-router-dom";
 // import { AuthContext } from '../../context/auth.context';
 
 function Login(props) {
   const [userName, setUserName] = useState('');
   const [senha, setSenha] = useState('');
   // const { saveToken } = useContext(AuthContext);
-  //const history = useNavigate();
+  const history = useNavigate();
 
   //const { geraToken } = useContext(AuthContext);
 
