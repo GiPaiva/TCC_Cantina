@@ -9,22 +9,13 @@ function Login(props) {
   const [senha, setSenha] = useState('');
   const history = useNavigate();
 
-  const { geraToken, salvaToken } = useContext(AuthContext);
+  const { geraToken } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
+    //Prevenindo que o formulário seja recarregado automaticamente, recarregando a página e assim, perdendo os dados
     event.preventDefault();
 
-    // try {
-    //   const response = await login(userName, senha)
-    //   // Handle the response here (e.g. store the JWT token)
-    //   const token = response;
-    //   console.log(token);
-    //   localStorage.setItem('token', token);
-    //   // Redirect to the listaproduto page
-    
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    //função que valida o nome e senha inseridos pelo usuário
     const validaToken = async () => {
       const response = await geraToken(userName, senha);
 
@@ -38,14 +29,6 @@ function Login(props) {
     };
 
     validaToken();
-  
-
-    // try {
-    //   history('listaproduto');
-    // } catch (error) {
-    //   console.log("Erro ao logar: " + error);
-    // }
-    
   };
 
   return (
