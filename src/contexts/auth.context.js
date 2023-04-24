@@ -2,8 +2,10 @@
 //Verificação do Token no LocalStorage --> envio dele na requisição
 //Salvar token no LocalStorage --> envio dele nas próximas requisições
 
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import axios from "axios";
+
+const { getRequest, postRequest, putRequest, deleteRequest } = require('./requestFunctions');
 
 export const AuthContext = createContext();
 
@@ -54,8 +56,6 @@ export default function AuthProvider ({ children }) {
     };
 
     const request = async (params, method, dados) => {
-        const token = localStorage.getItem('token');
-
         if(!params || !method){
             console.log('Faltam dados. Verifique se a rota e método estão sendo enviados.');
             return false;
@@ -70,13 +70,16 @@ export default function AuthProvider ({ children }) {
 
         switch (method) {
             case 'GET':
-                await axios.get()
+                getRequest(url);
                 break;
             case 'POST':
+                postRequest(url);
                 break;
             case 'PUT':
+                putRequest(url);
                 break;
             case 'DELETE':
+                deleteRequest(url);
                 break;
             default:
                 console.log('Método não enviado. Impossível realizar a requisição.');

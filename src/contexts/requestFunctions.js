@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const requestFunctions = {
-    
+
     getRequest : async (url) => {
         try {
             const response = await axios.get(url);
@@ -58,3 +58,5 @@ const requestFunctions = {
         }
     }
 };
+
+module.exports = requestFunctions;
