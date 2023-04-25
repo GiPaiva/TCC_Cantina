@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import AuthProvider from "./context/auth.context.js";
+import AuthProvider from "./contexts/auth.context.js";
 
 // Importação dos itens Cardapio, Login e Cadastro que serão renderizados nas rotas
 import Home from "./pages/Home/index.js";
