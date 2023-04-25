@@ -35,7 +35,6 @@ const requestFunctions = {
             const response = await axios.put(url);
             if(response){
                 console.log('Operação bem sucedida.');
-                return response;
             }
 
         } catch (error) {
@@ -49,7 +48,6 @@ const requestFunctions = {
             const response = await axios.delete(url);
             if(response){
                 console.log('Operação bem sucedida.');
-                return response;
             }
 
         } catch (error) {
